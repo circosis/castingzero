@@ -1,14 +1,14 @@
 <?php //echo $this->layout()->content; ?>
 <!doctype html><head>
 <title>Casting Zero</title>
-<link href="http://localhost/CastingZero/public/stylesheets/style.css" rel="stylesheet" type="text/css" />
+<link href="http://localhost/repo/CastingZero/public/stylesheets/style.css" rel="stylesheet" type="text/css" />
 <!--http://modernizr.com/-->
 <!--http://960.gs/  //modalidad grid-->
-<script type="text/javascript" src="http://localhost/CastingZero/public/js/modernizr.js"></script>
-<script type="text/javascript" src="http://localhost/CastingZero/public/js/jquery-1.8.3.min.js"></script>
+<script type="text/javascript" src="http://localhost/repo/CastingZero/public/js/modernizr.js"></script>
+<script type="text/javascript" src="http://localhost/repo/CastingZero/public/js/jquery-1.8.3.min.js"></script>
 <?php echo $this->jQuery(); ?>
 <noscript>
-<link rel="stylesheet" href="http://localhost/CastingZero/public/css/mobile.min.css" />
+<link rel="stylesheet" href="http://localhost/repo/CastingZero/public/css/mobile.min.css" />
 </noscript>
 <script>
     function validar(){
@@ -17,7 +17,7 @@
     // Edit to suit your needs.
     var ADAPT_CONFIG = {
       // Where is your CSS?
-      path: 'http://localhost/CastingZero/public/css/',
+      path: 'http://localhost/repo/CastingZero/public/css/',
     
       // false = Only run once, when page first loads.
       // true = Change on window resize and page tilt.
@@ -36,12 +36,12 @@
       ]
     };
     </script>
-<script src="http://localhost/CastingZero/public/js/adapt.min.js"></script>
+<script src="http://localhost/repo/CastingZero/public/js/adapt.min.js"></script>
 </head>
 <body>
 <div id="conte" class="container_12 " style="padding-right:5px;">
   <header class="grid_12 " style="margin-top:10px;">
-  	<div class="logo"><img src="http://localhost/CastingZero/public/images/logos-01.png"></div>
+  	<div class="logo"><img src="http://localhost/repo/CastingZero/public/images/logos-01.png"></div>
     <div class="log">
 	<?php 
 	echo Zend_Auth::getInstance()->getIdentity(); 
