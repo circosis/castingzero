@@ -1,0 +1,43 @@
+@import 'reset.css';
+@import 'text.css';
+
+body {
+	background-image:url(../images/80-Stunning-Background-Patterns-For-Your-Websites.jpg);
+}
+header {
+	height:140px;
+}
+#conte{
+	color:#fff;
+	background-color: rgba(0, 0, 0, 0.8);
+	border-left:2px solid black;
+	border-right:2px solid black;
+	filter:progid:DXImageTransform.Microsoft.gradient(startColorstr=#99000000, endColorstr=#99000000);
+}
+
+.logo{
+	float:left;
+}
+.log{
+	float:right;
+}
+a{
+	text-decoration:none;
+	color: #999;
+}
+section {
+	min-height: 200px;
+	margin:10px 0;
+	padding:20px 0;
+}
+footer{
+	height:50px;
+	margin-bottom:10px;
+}
+/*estilos*/
+h1 {
+	text-align: center;
+}
+h2 {
+	text-align: center;
+}

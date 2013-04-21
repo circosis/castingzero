@@ -1,0 +1,56 @@
+@import 'reset.css';
+@import 'text.css';
+@import "compass/utilities";
+@import "compass/typography";
+@import "compass/css3";
+
+body {
+	font-family: sans-serif;
+}
+header {
+	height:140px;
+}
+#conte{
+	color:#fff;
+	background-color: rgba(0, 0, 0, 0.8);
+	filter:progid:DXImageTransform.Microsoft.gradient(startColorstr=#99000000, endColorstr=#99000000);
+	@include border-radius(15px);
+}
+
+.logo{
+	float:left;
+}
+.log{
+	float:right;
+}
+a{
+	text-decoration:none;
+	color: #999;
+}
+section {
+	min-height: 200px;
+	margin:10px 0;
+	padding:10px 0;
+}
+footer{
+	height:50px;
+	margin-bottom:10px;
+}
+/*estilos*/
+h1 {
+	text-align: center;
+}
+h2 {
+	text-align: center;
+}
+.zend_form {
+	dd{
+		margin:0;
+		input{
+			//width:100%;
+		}
+		.botonEnviar{
+			padding: 10px 0;
+		}
+	}
+}

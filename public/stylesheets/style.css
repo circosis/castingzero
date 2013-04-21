@@ -1,0 +1,72 @@
+@import url(reset.css);
+@import url(text.css);
+/* line 7, ../sass/style.scss */
+body {
+  font-family: sans-serif;
+}
+
+/* line 10, ../sass/style.scss */
+header {
+  height: 140px;
+}
+
+/* line 13, ../sass/style.scss */
+#conte {
+  color: #fff;
+  background-color: rgba(0, 0, 0, 0.8);
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr=#99000000, endColorstr=#99000000);
+  -webkit-border-radius: 15px;
+  -moz-border-radius: 15px;
+  -ms-border-radius: 15px;
+  -o-border-radius: 15px;
+  border-radius: 15px;
+}
+
+/* line 20, ../sass/style.scss */
+.logo {
+  float: left;
+}
+
+/* line 23, ../sass/style.scss */
+.log {
+  float: right;
+}
+
+/* line 26, ../sass/style.scss */
+a {
+  text-decoration: none;
+  color: #999;
+}
+
+/* line 30, ../sass/style.scss */
+section {
+  min-height: 200px;
+  margin: 10px 0;
+  padding: 10px 0;
+}
+
+/* line 35, ../sass/style.scss */
+footer {
+  height: 50px;
+  margin-bottom: 10px;
+}
+
+/*estilos*/
+/* line 40, ../sass/style.scss */
+h1 {
+  text-align: center;
+}
+
+/* line 43, ../sass/style.scss */
+h2 {
+  text-align: center;
+}
+
+/* line 47, ../sass/style.scss */
+.zend_form dd {
+  margin: 0;
+}
+/* line 52, ../sass/style.scss */
+.zend_form dd .botonEnviar {
+  padding: 10px 0;
+}
