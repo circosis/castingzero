@@ -2,45 +2,12 @@
 <!doctype html><head>
 <title>Casting Zero</title>
 <link href="http://localhost/repo/CastingZero/public/stylesheets/style.css" rel="stylesheet" type="text/css" />
-<!--http://modernizr.com/-->
-<!--http://960.gs/  //modalidad grid-->
-<script type="text/javascript" src="http://localhost/repo/CastingZero/public/js/modernizr.js"></script>
 <script type="text/javascript" src="http://localhost/repo/CastingZero/public/js/jquery-1.8.3.min.js"></script>
 <?php echo $this->jQuery(); ?>
-<noscript>
-<link rel="stylesheet" href="http://localhost/repo/CastingZero/public/css/mobile.min.css" />
-</noscript>
-<script>
-    function validar(){
-     
-    }
-    // Edit to suit your needs.
-    var ADAPT_CONFIG = {
-      // Where is your CSS?
-      path: 'http://localhost/repo/CastingZero/public/css/',
-    
-      // false = Only run once, when page first loads.
-      // true = Change on window resize and page tilt.
-      dynamic: true,
-      // First range entry is the minimum.
-      // Last range entry is the maximum.
-      // Separate ranges by "to" keyword.
-      range: [
-        '0px    to 760px  = mobile.min.css',
-        '760px  to 980px  = 720.min.css',
-        '980px  to 1280px = 960.min.css',
-        '1280px to 1600px = 1200.min.css',
-        '1600px to 1920px = 1560.min.css',
-        '1920px to 2540px = 1920.min.css',
-        '2540px           = 2520.min.css'
-      ]
-    };
-    </script>
-<script src="http://localhost/repo/CastingZero/public/js/adapt.min.js"></script>
 </head>
 <body>
-<div id="conte" class="container_12 " style="padding-right:5px;">
-  <header class="grid_12 " style="margin-top:10px;">
+<div id="conte">
+  <header style="margin-top:10px;">
   	<div class="logo"><img src="http://localhost/repo/CastingZero/public/images/logos-01.png"></div>
     <div class="log">
 	<?php 
@@ -53,10 +20,10 @@
     </div>
   </header>
   <div class="clear"></div>
-  <section class="grid_12">
+  <section>
     <div class="content" style="margin:10px"> <?php echo $this->layout()->content; ?></div>
   </section>
   <div class="clear"></div>
-  <footer class="grid_12" ><p style="margin:10px">Footer<?php echo date('Y') ?></p></footer>
+  <footer><p style="margin:10px">Footer<?php echo date('Y') ?></p></footer>
 </div>
 </body>
