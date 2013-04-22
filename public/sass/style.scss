@@ -6,36 +6,77 @@
 
 body {
 	font-family: sans-serif;
-	background:black;
+	background-color: rgba(0, 0, 0, 0.8);
 }
 header {
-	height:140px;
+	min-height:90px;
+	border-bottom: 1px solid #121212;
+	padding:10px
 }
 #conte{
-	color:#fff;
-	background-color: rgba(0, 0, 0, 0.8);
+	border: 1px solid #121212;
+ 	color:#fff;
+	width:50%;
+	//padding:10px 2%;
+	margin:0px auto;
+	background-color: rgba(0, 0, 0, 0.4);
 	filter:progid:DXImageTransform.Microsoft.gradient(startColorstr=#99000000, endColorstr=#99000000);
-	@include border-radius(15px);
+	@include border-radius(5px);
+	.contelinks{
+		width:34%;
+		margin:0px auto;
+		.linksHome{
+			float:left;
+		}
+		.separador{
+			width: 16px;
+			float: left;
+			padding: 1px;
+			text-align: center;
+			font-size: 13px;
+		}
+	}
 }
-
+.clear{
+	clear:both;
+}
 .logo{
 	float:left;
+	img{
+		width:100px;
+	}
 }
 .log{
-	float:right;
+	float: right;
+	padding-top: 65px;
 }
 a{
 	text-decoration:none;
-	color: #999;
+	color: grey;
+	text-shadow: rgba(0, 0, 0, 1) 0 2px 0;	
+}
+a:hover{
+	color: white;
+	text-shadow: rgba(0, 0, 0, 1) 0 2px 0;			
 }
 section {
-	min-height: 200px;
-	margin:10px 0;
-	padding:10px 0;
+	min-height:25px;
+	margin:10px;
+	padding:10px;
+	font-size:13px;
+	input{
+		padding:0;
+	}
+	label{
+		padding:4px;
+	}
 }
-footer{
-	height:50px;
-	margin-bottom:10px;
+.footer{
+	background-color: rgba(0, 0, 0, 0.4);
+	min-height:20px;
+	margin: 10px 0;
+	padding: 1px 10px;
+	font-size:12px;
 }
 /*estilos*/
 h1 {

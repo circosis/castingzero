@@ -3,71 +3,122 @@
 /* line 7, ../sass/style.scss */
 body {
   font-family: sans-serif;
-  background: black;
+  background-color: rgba(0, 0, 0, 0.8);
 }
 
 /* line 11, ../sass/style.scss */
 header {
-  height: 140px;
+  min-height: 90px;
+  border-bottom: 1px solid #121212;
+  padding: 10px;
 }
 
-/* line 14, ../sass/style.scss */
+/* line 16, ../sass/style.scss */
 #conte {
+  border: 1px solid #121212;
   color: #fff;
-  background-color: rgba(0, 0, 0, 0.8);
+  width: 50%;
+  margin: 0px auto;
+  background-color: rgba(0, 0, 0, 0.4);
   filter: progid:DXImageTransform.Microsoft.gradient(startColorstr=#99000000, endColorstr=#99000000);
-  -webkit-border-radius: 15px;
-  -moz-border-radius: 15px;
-  -ms-border-radius: 15px;
-  -o-border-radius: 15px;
-  border-radius: 15px;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  -ms-border-radius: 5px;
+  -o-border-radius: 5px;
+  border-radius: 5px;
+}
+/* line 25, ../sass/style.scss */
+#conte .contelinks {
+  width: 34%;
+  margin: 0px auto;
+}
+/* line 28, ../sass/style.scss */
+#conte .contelinks .linksHome {
+  float: left;
+}
+/* line 31, ../sass/style.scss */
+#conte .contelinks .separador {
+  width: 16px;
+  float: left;
+  padding: 1px;
+  text-align: center;
+  font-size: 13px;
 }
 
-/* line 21, ../sass/style.scss */
+/* line 40, ../sass/style.scss */
+.clear {
+  clear: both;
+}
+
+/* line 43, ../sass/style.scss */
 .logo {
   float: left;
 }
+/* line 45, ../sass/style.scss */
+.logo img {
+  width: 100px;
+}
 
-/* line 24, ../sass/style.scss */
+/* line 49, ../sass/style.scss */
 .log {
   float: right;
+  padding-top: 65px;
 }
 
-/* line 27, ../sass/style.scss */
+/* line 53, ../sass/style.scss */
 a {
   text-decoration: none;
-  color: #999;
+  color: grey;
+  text-shadow: black 0 2px 0;
 }
 
-/* line 31, ../sass/style.scss */
+/* line 58, ../sass/style.scss */
+a:hover {
+  color: white;
+  text-shadow: black 0 2px 0;
+}
+
+/* line 62, ../sass/style.scss */
 section {
-  min-height: 200px;
-  margin: 10px 0;
-  padding: 10px 0;
+  min-height: 25px;
+  margin: 10px;
+  padding: 10px;
+  font-size: 13px;
+}
+/* line 67, ../sass/style.scss */
+section input {
+  padding: 0;
+}
+/* line 70, ../sass/style.scss */
+section label {
+  padding: 4px;
 }
 
-/* line 36, ../sass/style.scss */
-footer {
-  height: 50px;
-  margin-bottom: 10px;
+/* line 74, ../sass/style.scss */
+.footer {
+  background-color: rgba(0, 0, 0, 0.4);
+  min-height: 20px;
+  margin: 10px 0;
+  padding: 1px 10px;
+  font-size: 12px;
 }
 
 /*estilos*/
-/* line 41, ../sass/style.scss */
+/* line 82, ../sass/style.scss */
 h1 {
   text-align: center;
 }
 
-/* line 44, ../sass/style.scss */
+/* line 85, ../sass/style.scss */
 h2 {
   text-align: center;
 }
 
-/* line 48, ../sass/style.scss */
+/* line 89, ../sass/style.scss */
 .zend_form dd {
   margin: 0;
 }
-/* line 53, ../sass/style.scss */
+/* line 94, ../sass/style.scss */
 .zend_form dd .botonEnviar {
   padding: 10px 0;
 }

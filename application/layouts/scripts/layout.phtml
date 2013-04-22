@@ -7,7 +7,7 @@
 </head>
 <body>
 <div id="conte">
-  <header style="margin-top:10px;">
+  <header>
   	<div class="logo"><img src="http://localhost/repo/CastingZero/public/images/logos-01.png"></div>
     <div class="log">
 	<?php 
@@ -16,14 +16,16 @@
 		if ($auth->hasIdentity()) {
 	?>
     |<a href="usuario/logout">logout</a>
-	<?php } ?>
+	<?php }else{
+		echo' <a href="usuario/login">login</a>';
+	} ?>
     </div>
   </header>
   <div class="clear"></div>
   <section>
-    <div class="content" style="margin:10px"> <?php echo $this->layout()->content; ?></div>
+    <div class="content"> <?php echo $this->layout()->content; ?></div>
   </section>
   <div class="clear"></div>
-  <footer><p style="margin:10px">Footer<?php echo date('Y') ?></p></footer>
+  <div class="footer"><p>Footer<?php echo date('Y') ?></p></div>
 </div>
 </body>
