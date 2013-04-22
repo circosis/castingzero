@@ -3,7 +3,7 @@ class IngresoController extends Zend_Controller_Action{
     public function init()
     {
     	$view = new Zend_View();
-	$view->setScriptPath(APP_PATH . 'views/ingreso');
+		$view->setScriptPath(APP_PATH . 'views/ingreso');
     }
     public function indexAction()
     {
