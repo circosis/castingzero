@@ -14,11 +14,12 @@ class Application_Model_Aspirantes
  
     $select = $this -> _dbTableAspirantes -> select();
         $select->from($this -> _dbTableAspirantes,
-                        array('id','nombre', 'apellido','telefono', 'cel', 'PIN', 'email', 'multiselect1','Sexo', 'foto1', 'foto2', 'foto3'));
+                        array('id','nombre', 'apellido','telefono', 'cel', 'PIN', 'email', 'multiselect1','Sexo', 'fechaNac','foto1', 'foto2', 'foto3'));
  
          return $this -> _dbTableAspirantes -> fetchAll($select);
     }
-	public function add($name, $surname, $telefono, $cel, $PIN, $mail, $multiselect1, $Sexo, $foto1, $foto2, $foto3)
+
+	public function add($name, $surname, $telefono, $cel, $PIN, $mail, $multiselect1, $Sexo, $fechaNacimiento, $foto1, $foto2, $foto3)
 	{
 		
 		$data = array (
@@ -31,6 +32,7 @@ class Application_Model_Aspirantes
 						'email' => $mail,
 						'multiselect1' => implode(",",$multiselect1),
 						'Sexo' => $Sexo,
+						'fechaNac' => $fechaNacimiento,
 						'foto1' => $foto1,
 						'foto2' => $foto2,
 						'foto3' => $foto3
