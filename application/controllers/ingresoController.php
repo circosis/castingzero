@@ -1,13 +1,16 @@
 ﻿<?php
-class IngresoController extends Zend_Controller_Action{
+class IngresoController extends Zend_Controller_Action
+{
     public function init()
     {
+<<<<<<< HEAD
     	$view = new Zend_View();
 		$view->setScriptPath(APP_PATH . 'views/ingreso');
+=======
+>>>>>>> develop
     }
     public function indexAction()
     {
-
 		$formulario = new Application_Form_AspirantesForm();
 		$this->view->form = $formulario;
 		if ($this->_request->isPost())
@@ -15,8 +18,6 @@ class IngresoController extends Zend_Controller_Action{
 			$formData = $this->_request->getPost();
 			if ($formulario->isValid($formData))
 			{
-				
-				
 			$name = $formulario->getValue('name');
 			$surname = $formulario->getValue('surname');
 			$telefono = $formulario->getValue('telefono');
@@ -31,7 +32,7 @@ class IngresoController extends Zend_Controller_Action{
 			$foto3 = $formulario->getValue('foto3');
 			
 			$register = new Application_Model_Aspirantes();
-			$register -> add($name, $surname, $telefono, $cel, $PIN, $mail, $multiselect1, $Sexo, $foto1, $foto2, $foto3);
+			$register -> add($name, $surname, $telefono, $cel, $PIN, $mail, $multiselect1, $fechaNacimiento, $Sexo, $foto1, $foto2, $foto3);
 			$this->view->form = 'Tus datos fueron enviados correctamente. Casting Zero los avaluará.'; 
 			}
 		}

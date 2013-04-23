@@ -51,9 +51,6 @@ class Application_Form_AspirantesForm extends Zend_Form
 		'format' => 'dd.mm.yyyy',
 		)))
 		->setRequired(true);
-		
-
-		
 	
 		$multiselect1 = new Zend_Form_Element_Multiselect('multiselect1'); 
 		$multiselect1 ->setLabel('Mensaje:')
@@ -65,59 +62,32 @@ class Application_Form_AspirantesForm extends Zend_Form
 
 		$foto1 = new Zend_Form_Element_File('foto1');
 		$foto1->setLabel('Upload an image:')
-				->setDestination('../public/upload');
+				->setDestination('../htdocs/upload');
 		$foto1->addValidator('Count', false, 1);
-		$foto1->addValidator('Size', false, 202400);
+		$foto1->addValidator('Size', false, 100400);
 		$foto1->addValidator('Extension', false, 'jpg,png,gif');
 
 		$foto2 = new Zend_Form_Element_File('foto2');
 		$foto2->setLabel('Upload an image:')
-			  ->setDestination('../public/upload');
+			  ->setDestination('../htdocs/upload');
 		$foto2->addValidator('Count', false, 1);
-		$foto2->addValidator('Size', false, 202400);
+		$foto2->addValidator('Size', false, 100400);
 		$foto2->addValidator('Extension', false, 'jpg,png,gif');
 
 		$foto3 = new Zend_Form_Element_File('foto3');
 		$foto3->setLabel('Upload an image:')
-				->setDestination('../public/upload');
+				->setDestination('../htdocs/upload');
 		$foto3->addValidator('Count', false, 1);
-		$foto3->addValidator('Size', false, 202400);
+		$foto3->addValidator('Size', false, 100400);
 		$foto3->addValidator('Extension', false, 'jpg,png,gif');
 
 		$submit = new Zend_Form_Element_Submit('submit');
 		$submit->class = "botonEnviar";
 		$submit->setLabel('Enviar:');
 				
-		$this->addElements(array($name, 
-								 $surname,
-								 $telefono,
-								 $cel,
-								 $PIN, 
-								 $email,  
-								 $Sexo,
-								 $fechaNacimiento,
-								 $multiselect1, 
-								 $foto1,
-								 $foto2,
-								 $foto3,
-								 $submit));
+		$this->addElements(array($name,$surname,$telefono,$cel,$PIN,$email,$Sexo,$fechaNacimiento,$foto1,$foto2,$foto3,$multiselect1,$submit));
+		
 					 
 	}
-//Nombre *
-//Apellido *
-//Teléfono *
-//Celular *
-//PIN
-//E-mail *
-/*Sexo *
-Fecha de nacimiento  *               
-Edad…….*.                          
-Edad aparente *
-Tipo doc   *                                    Nro Doc…..* 
-Pasaporte al día *          si----            no----             
-Nro Pasaporte-------
-Puede viajar  *                si---              no---
-Nacionalidad *
-*/
 }
 
