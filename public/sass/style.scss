@@ -95,4 +95,20 @@ h2 {
 			padding: 10px 0;
 		}
 	}
+	.errors{
+		li{
+		background:red;
+		color:white;
+		margin:0px;
+		padding:0px;
+		}
+	}
+}
+#foto1 , #foto2, #foto3{
+	width:128px;
+}
+#multiselect1{
+	width:40%;
+	min-height:250px;
+	margin:0px auto;
 }

@@ -122,3 +122,22 @@ h2 {
 .zend_form dd .botonEnviar {
   padding: 10px 0;
 }
+/* line 99, ../sass/style.scss */
+.zend_form .errors li {
+  background: red;
+  color: white;
+  margin: 0px;
+  padding: 0px;
+}
+
+/* line 107, ../sass/style.scss */
+#foto1, #foto2, #foto3 {
+  width: 128px;
+}
+
+/* line 110, ../sass/style.scss */
+#multiselect1 {
+  width: 40%;
+  min-height: 250px;
+  margin: 0px auto;
+}

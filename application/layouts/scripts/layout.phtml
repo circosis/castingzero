@@ -8,16 +8,16 @@
 <body>
 <div id="conte">
   <header>
-  	<div class="logo"><img src="http://www.castingzero.com/images/logos-01.png"></div>
+  	<div class="logo"><a href="http://www.castingzero.com/"><img src="http://www.castingzero.com/images/logos-01.png"></a></div>
     <div class="log">
 	<?php 
 	echo Zend_Auth::getInstance()->getIdentity(); 
 	$auth = Zend_Auth::getInstance();
 		if ($auth->hasIdentity()) {
 	?>
-    |<a href="usuario/logout">logout</a>
+    |<a href="http://www.castingzero.com/usuario/logout">logout</a>
 	<?php }else{
-		echo' <a href="usuario/login">login</a>';
+		echo' <a href="http://www.castingzero.com/usuario/login">login</a>';
 	} ?>
     </div>
   </header>
