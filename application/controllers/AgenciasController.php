@@ -5,7 +5,7 @@ class AgenciasController extends Zend_Controller_Action
     {
 		$auth = Zend_Auth::getInstance();
 		if (! $auth->hasIdentity()) {
-			return $this->_redirect('/usuario/login');
+			return $this->_redirect('http://www.castingzero.com/usuario/login');
 		}
     }
     public function indexAction()

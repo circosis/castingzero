@@ -1,23 +1,23 @@
 <?php //echo $this->layout()->content; ?>
 <!doctype html><head>
 <title>Casting Zero</title>
-<link href="http://www.castingzero.com/stylesheets/style.css" rel="stylesheet" type="text/css" />
+<link href="stylesheets/style.css" rel="stylesheet" type="text/css" />
 <script type="text/javascript" src="http://www.castingzero.com/js/jquery-1.8.3.min.js"></script>
 <?php echo $this->jQuery(); ?>
 </head>
 <body>
 <div id="conte">
   <header>
-  	<div class="logo"><img src="http://www.castingzero.com/images/logos-01.png"></div>
+  	<div class="logo"><a href="http://www.castingzero.com/"><img src="http://www.castingzero.com/images/logos-01.png"></a></div>
     <div class="log">
 	<?php 
 	echo Zend_Auth::getInstance()->getIdentity(); 
 	$auth = Zend_Auth::getInstance();
 		if ($auth->hasIdentity()) {
 	?>
-    |<a href="usuario/logout">logout</a>
+    |<a href="http://www.castingzero.com/usuario/logout">logout</a>
 	<?php }else{
-		echo' <a href="usuario/login">login</a>';
+		echo' <a href="http://www.castingzero.com/usuario/login">login</a>';
 	} ?>
     </div>
   </header>
@@ -27,5 +27,7 @@
   </section>
   <div class="clear"></div>
   <div class="footer"><p>CastingZero -  Agencia de representación de artistas</p></div>
+<script type="text/javascript" src="js/check.js"></script>
+
 </div>
 </body>

@@ -122,3 +122,67 @@ h2 {
 .zend_form dd .botonEnviar {
   padding: 10px 0;
 }
+/* line 99, ../sass/style.scss */
+.zend_form .errors li {
+  background: red;
+  color: white;
+  margin: 0px;
+  padding: 0px;
+}
+
+/* line 107, ../sass/style.scss */
+#foto1, #foto2, #foto3 {
+  width: 128px;
+}
+
+/* line 110, ../sass/style.scss */
+#multiselect1-element {
+  width: 230px;
+  overflow: hidden;
+  position: absolute;
+  top: 580px;
+  margin-left: 150px;
+}
+/* line 116, ../sass/style.scss */
+#multiselect1-element #multiselect1 {
+  display: none;
+  width: 250px;
+  margin: 0px;
+  padding: 5px 8px 5px 5px;
+}
+
+/* line 125, ../sass/style.scss */
+.botonCerrarFormu {
+  background: gray;
+}
+/* line 127, ../sass/style.scss */
+.botonCerrarFormu .boton-aceptar {
+  padding: 11px 15%;
+  line-height: 37px;
+  background: #000;
+  box-sizing: border-box;
+  cursor: pointer;
+}
+/* line 133, ../sass/style.scss */
+.botonCerrarFormu .boton-aceptar:hover {
+  background: #333;
+}
+/* line 137, ../sass/style.scss */
+.botonCerrarFormu .boton-cancelar {
+  padding: 11px 15%;
+  line-height: 37px;
+  box-sizing: border-box;
+  cursor: pointer;
+}
+/* line 142, ../sass/style.scss */
+.botonCerrarFormu .boton-cancelar:hover {
+  background: #333;
+}
+
+/* line 148, ../sass/style.scss */
+.leyedapop {
+  background: gray;
+  color: black;
+  padding: 5px 9px;
+  font-size: 11px;
+}
