@@ -71,13 +71,27 @@ class Application_Form_AspirantesForm extends Zend_Form
 		)))
 		->setRequired(true);
 	
+		$check = new Zend_Form_Element_MultiCheckbox('Categorias', array(
+			'multiOptions' => array(
+							'Cantante' => 'Cantante',
+							'Modelo' => 'Modelo',
+							'Actor/actriz'=>'Actor/actriz',
+							'Acróbata/Gimnasta' =>'Acróbata/Gimnasta:',
+							'Artistac' =>'Artista circense:'
+			
+		)));
+		$check->setLabel('Categorias:');
+				
+		// ->setValue(array('Cantante', 'Modelo'));
+		 					
 		$multiselect1 = new Zend_Form_Element_Multiselect('multiselect1'); 
-		$multiselect1 ->setLabel('Mensaje:')
-				  	  -> setMultiOptions(array(
-							'acrobacia piso' => 'Piso',
-							'acrobacia cama' => 'Cama',
-							'parto'=>'hola'
-		));
+		$multiselect1 ->class="acrobatas";
+		$multiselect1 -> setMultiOptions(array(
+							'cama' => 'Cama elástica',
+							'Gimnasiar' => 'Gimnasia rítmica',
+							'Gimnasiaa'=>'Gimnasia artística',
+							'Acrobaciap' =>'Acrobacia de piso (tumbling)'
+		),1);
 
 		$foto1 = new Zend_Form_Element_File('foto1');
 		$foto1->setLabel('Imagen 1 // Recorda que no puede pesar mas de 3mb:')
@@ -108,7 +122,7 @@ class Application_Form_AspirantesForm extends Zend_Form
 		$submit->class = "botonEnviar";
 		$submit->setLabel('Enviar:');
 				
-		$this->addElements(array($name,$surname,$telefono,$cel,$PIN,$email,$multiselect1,$Sexo,$fechaNacimiento,$foto1,$foto2,$foto3,$submit));
+		$this->addElements(array($name,$surname,$telefono,$cel,$PIN,$email,$Sexo,$fechaNacimiento,$check,$multiselect1,$foto1,$foto2,$foto3,$submit));
 		
 					 
 	}

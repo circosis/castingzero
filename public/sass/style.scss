@@ -107,8 +107,47 @@ h2 {
 #foto1 , #foto2, #foto3{
 	width:128px;
 }
-#multiselect1{
-	width:40%;
-	min-height:250px;
-	margin:0px auto;
+#multiselect1-element{
+	width:230px;
+	overflow:hidden;
+	position: absolute;
+	top: 580px;	
+	margin-left:150px;
+	#multiselect1{
+		display: none;
+		width: 250px;
+		//min-height: 250px;
+		margin: 0px;
+		padding: 5px 8px 5px 5px;
+	
+	}
+}
+.botonCerrarFormu{
+	background:gray;
+	.boton-aceptar{
+		padding:11px 15%;
+		line-height: 37px;
+		background: #000;
+		box-sizing: border-box;
+		cursor:pointer;
+		&:hover{
+			background: #333;
+		}
+	}
+	.boton-cancelar{
+		padding:11px 15%;
+		line-height: 37px;
+		box-sizing: border-box;
+		cursor:pointer;
+		&:hover{
+			background: #333;
+		}
+
+	}
+}
+.leyedapop{
+	background: gray;
+	color: black;
+	padding: 5px 9px;
+	font-size: 11px;
 }
