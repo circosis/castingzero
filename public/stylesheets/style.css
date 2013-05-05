@@ -26,9 +26,6 @@ body {
   -webkit-box-shadow: black 2px 2px 10px;
   -moz-box-shadow: black 2px 2px 10px;
   box-shadow: black 2px 2px 10px;
-  background-image: url(../images/pat2/galpon.png);
-  background-repeat: no-repeat;
-  background-position: center;
 }
 
 /* line 53, ../sass/style.scss */
