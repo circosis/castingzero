@@ -12,7 +12,7 @@ class Application_Form_RegisterForm extends Zend_Form
 		$password->setLabel('Password:');
 		
 		$submit = new Zend_Form_Element_Submit('submit');
-		$submit->setLabel('Enviar:');
+		$submit->setLabel('Enviar');
 		
 		$this->addElements(array($user,$password, $submit));
 	}

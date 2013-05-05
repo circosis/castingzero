@@ -120,7 +120,7 @@ class Application_Form_AspirantesForm extends Zend_Form
 
 		$submit = new Zend_Form_Element_Submit('submit');
 		$submit->class = "botonEnviar";
-		$submit->setLabel('Enviar:');
+		$submit->setLabel('Enviar');
 				
 		$this->addElements(array($name,$surname,$telefono,$cel,$PIN,$email,$Sexo,$fechaNacimiento,$check,$multiselect1,$foto1,$foto2,$foto3,$submit));
 		

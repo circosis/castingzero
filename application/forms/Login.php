@@ -5,23 +5,18 @@ class Application_Form_Login extends Zend_Form
     public function init() 
     {
  
-        $this->addElement(
-            'text', 'username', array(
-                'label' => 'Usuario:',
-                'required' => true
-            )
-        );
- 
-        $this->addElement(
-            'password', 'password', array(
-                'label' => 'Contraseña:',
-                'required' => true
-            )
-        );
- 
-        $this->addElement(
-                'submit', 'Ingresar', array()
-        );
+		$user = new Zend_Form_Element_Text('username');
+		$user->setLabel('Nombre:');
+		$user->addValidator('alpha');
+		$user->setErrorMessages(array('messages' => 'El campo nombre solo puede contener letras'));
+		
+		$password = new Zend_Form_Element_Password('password');
+		$password->setLabel('Password:');
+		
+		$submit = new Zend_Form_Element_Submit('submit');
+		$submit->setLabel('Enviar');
+		
+		$this->addElements(array($user,$password, $submit));
     }
  
 }
