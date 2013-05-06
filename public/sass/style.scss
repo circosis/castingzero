@@ -49,6 +49,7 @@ body {
 	//background-image: url(../images/pat2/galpon.png);
 	//background-repeat: no-repeat;
 	//background-position: center;
+	overflow: hidden;
 }
 .clear{
 	clear:both;
@@ -150,13 +151,27 @@ section {
 	
 	}
 }
+#multiselect2-element{
+	width:230px;
+	overflow:hidden;
+	position: absolute;
+	top: 580px;	
+	margin-left:150px;
+	#multiselect2{
+		display: none;
+		width: 230px;
+		min-height: 250px;
+		margin: 0px;
+		padding: 5px 8px 5px 5px;
+	
+	}
+}
 .botonCerrarFormu{
-	background:gray;
+	@include degradoSimple;
+	color:white;
+	line-height: 38px;
 	.boton-aceptar{
 		padding:11px 15%;
-		line-height: 37px;
-		background: #000;
-		box-sizing: border-box;
 		cursor:pointer;
 		&:hover{
 			background: #333;
@@ -164,9 +179,8 @@ section {
 	}
 	.boton-cancelar{
 		padding:11px 15%;
-		line-height: 37px;
-		box-sizing: border-box;
 		cursor:pointer;
+		@include degradoOver;
 		&:hover{
 			background: #333;
 		}
