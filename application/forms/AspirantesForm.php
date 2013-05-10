@@ -3,6 +3,10 @@
 class Application_Form_AspirantesForm extends Zend_Form
 {
 	public function init(){
+		function dameMultiselect($name){
+			return new Zend_Form_Element_Multiselect($name); 
+		}
+
 		$translateValidators = array(
         				Zend_Validate_NotEmpty::IS_EMPTY => 'Los campos no pueden estar vacios',
         				Zend_Validate_Regex::NOT_MATCH => 'Invalid value entered',
@@ -75,16 +79,13 @@ class Application_Form_AspirantesForm extends Zend_Form
 			'multiOptions' => array(
 							'Cantante' => 'Cantante',
 							'Modelo' => 'Modelo',
-							'Actor/actriz'=>'Actor/actriz',
-							'Acróbata/Gimnasta' =>'Acróbata/Gimnasta:',
+							'ActorActriz'=>'Actor/actriz',
+							'AcróbataGimnasta' =>'Acróbata/Gimnasta:',
 							'Artistac' =>'Artista circense:'
-			
 		)));
 		$check->setLabel('Categorias:');
-				
-		// ->setValue(array('Cantante', 'Modelo'));
-		 					
-		$multiselect1 = new Zend_Form_Element_Multiselect('multiselect1'); 
+		
+		$multiselect1 = dameMultiselect('multiselect1'); 
 		$multiselect1 ->class="acrobatas";
 		$multiselect1 -> setMultiOptions(array(
 							'cama' => 'Cama elástica',
@@ -92,7 +93,25 @@ class Application_Form_AspirantesForm extends Zend_Form
 							'Gimnasiaa'=>'Gimnasia artística',
 							'Acrobaciap' =>'Acrobacia de piso (tumbling)'
 		),1);
-
+		$multiselect2 = dameMultiselect('multiselect2'); 
+		$multiselect2 ->class="acrobatas";
+		$multiselect2 -> setMultiOptions(array(
+							'Parada' => 'Parada de manos',
+							'Tela' => 'Tela',
+							'Aro'=>'Aro',
+							'TrapecioF' =>'Trapecio Fijo',
+							'TrapecioV' =>'Trapecio Volante',
+							'TrapecioAV' =>'Trapecio a vuelo',
+							'MalabaresC' =>'Malabares - Contact',
+							'MalabaresR' =>'Malabares - Rolling',
+							'MalabaresP' =>'Malabares  - Pelotas',
+							'Clavas' =>'Clavas',
+							'Diavolo' =>'Diávolo',																																										
+							'PaloC' =>'Palo chino',																																								
+							'Equilibrista' =>'Equilibrista',
+							'Contorsionista' =>'Contorsionista'																																										
+		),1);
+		
 		$foto1 = new Zend_Form_Element_File('foto1');
 		$foto1->setLabel('Imagen 1 // Recorda que no puede pesar mas de 3mb:')
 			  ->setDestination('../htdocs/upload')
@@ -122,9 +141,8 @@ class Application_Form_AspirantesForm extends Zend_Form
 		$submit->class = "botonEnviar";
 		$submit->setLabel('Enviar');
 				
-		$this->addElements(array($name,$surname,$telefono,$cel,$PIN,$email,$Sexo,$fechaNacimiento,$check,$multiselect1,$foto1,$foto2,$foto3,$submit));
-		
-					 
+		$this->addElements(array($name,$surname,$telefono,$cel,$PIN,$email,$Sexo,$fechaNacimiento,$check,$multiselect1,$multiselect2,$foto1,$foto2,$foto3,$submit));
+
 	}
 }
 

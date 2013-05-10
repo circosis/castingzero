@@ -20,15 +20,15 @@ class IngresoController extends Zend_Controller_Action
 			$cel = $formulario->getValue('cel');
 			$PIN = $formulario->getValue('PIN');
 			$mail = $formulario->getValue('email');
-			$multiselect1 = $formulario->getValue('multiselect1');
+			$multiselect1 = implode(",", $formulario->getValue('multiselect1'));
+			$multiselect2 = implode(",", $formulario->getValue('multiselect2'));
 			$Sexo = $formulario->getValue('Sexo');
 			$fechaNacimiento = $formulario->getValue('fechaNac');
 			$foto1 = $formulario->getValue('foto1');
 			$foto2 = $formulario->getValue('foto2');
 			$foto3 = $formulario->getValue('foto3');
-			
 			$register = new Application_Model_Aspirantes();
-			$register -> add($name, $surname, $telefono, $cel, $PIN, $mail, $multiselect1, $Sexo, $fechaNacimiento, $foto1, $foto2, $foto3);
+			$register -> add($name, $surname, $telefono, $cel, $PIN, $mail, $multiselect1,$multiselect2, $Sexo, $fechaNacimiento, $foto1, $foto2, $foto3);
 			$this->view->form = 'Tus datos fueron enviados correctamente. Casting Zero los avaluará.'; 
 			}
 		}
