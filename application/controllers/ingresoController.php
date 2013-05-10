@@ -19,8 +19,8 @@ class IngresoController extends Zend_Controller_Action
 			$cel = $formulario->getValue('cel');
 			$PIN = $formulario->getValue('PIN');
 			$mail = $formulario->getValue('email');
-			$multiselect1 = $formulario->getValue('multiselect1');
-			$multiselect2 = $formulario->getValue('multiselect2');
+			$multiselect1 = implode(",", $formulario->getValue('multiselect1'));
+			$multiselect2 = implode(",", $formulario->getValue('multiselect2'));
 			$Sexo = $formulario->getValue('Sexo');
 			$fechaNacimiento = $formulario->getValue('fechaNac');
 			$foto1 = $formulario->getValue('foto1');

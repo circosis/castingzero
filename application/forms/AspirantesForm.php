@@ -3,6 +3,10 @@
 class Application_Form_AspirantesForm extends Zend_Form
 {
 	public function init(){
+		function dameMultiselect($name){
+			return new Zend_Form_Element_Multiselect($name); 
+		}
+
 		$translateValidators = array(
         				Zend_Validate_NotEmpty::IS_EMPTY => 'Los campos no pueden estar vacios',
         				Zend_Validate_Regex::NOT_MATCH => 'Invalid value entered',
@@ -80,8 +84,8 @@ class Application_Form_AspirantesForm extends Zend_Form
 							'Artistac' =>'Artista circense:'
 		)));
 		$check->setLabel('Categorias:');
-	 					
-		$multiselect1 = new Zend_Form_Element_Multiselect('multiselect1'); 
+		
+		$multiselect1 = dameMultiselect('multiselect1'); 
 		$multiselect1 ->class="acrobatas";
 		$multiselect1 -> setMultiOptions(array(
 							'cama' => 'Cama elástica',
@@ -89,7 +93,7 @@ class Application_Form_AspirantesForm extends Zend_Form
 							'Gimnasiaa'=>'Gimnasia artística',
 							'Acrobaciap' =>'Acrobacia de piso (tumbling)'
 		),1);
-		$multiselect2 = new Zend_Form_Element_Multiselect('multiselect2'); 
+		$multiselect2 = dameMultiselect('multiselect2'); 
 		$multiselect2 ->class="acrobatas";
 		$multiselect2 -> setMultiOptions(array(
 							'Parada' => 'Parada de manos',
@@ -138,8 +142,7 @@ class Application_Form_AspirantesForm extends Zend_Form
 		$submit->setLabel('Enviar');
 				
 		$this->addElements(array($name,$surname,$telefono,$cel,$PIN,$email,$Sexo,$fechaNacimiento,$check,$multiselect1,$multiselect2,$foto1,$foto2,$foto3,$submit));
-		
-					 
+
 	}
 }
 

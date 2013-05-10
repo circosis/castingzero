@@ -20,25 +20,8 @@ class Application_Model_Aspirantes
     }
 	public function add($name, $surname, $telefono, $cel, $PIN, $mail, $multiselect1,$multiselect2, $Sexo, $fechaNacimiento, $foto1, $foto2, $foto3)
 	{
-		
-		$data = array (
-						'pendiente' => 'false',
-						'nombre' => $name , 
-						'apellido' => $surname,
-						'telefono' => $telefono,
-						'cel' => $cel,
-						'PIN' => $PIN,
-						'email' => $mail,
-						'multiselect1' => $multiselect1,
-						'multiselect2' => $multiselect2,
-						'Sexo' => $Sexo,
-						'fechaNac' => $fechaNacimiento,
-						'foto1' => $foto1,
-						'foto2' => $foto2,
-						'foto3' => $foto3
-						);
-		var_dump($data);		
-		//$this -> _dbTableAspirantes -> insert($data);
+		$data = array ('pendiente' => 'false','nombre' => $name , 'apellido' => $surname,'telefono' => $telefono,'cel' => $cel,'PIN' => $PIN,'email' => $mail,'multiselect1' => $multiselect1,'multiselect2' => $multiselect2,'Sexo' => $Sexo,'fechaNac' => $fechaNacimiento,'foto1' => $foto1,'foto2' => $foto2,'foto3' => $foto3);
+		$this -> _dbTableAspirantes -> insert($data);
 
 		
 	}
