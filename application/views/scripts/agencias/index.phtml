@@ -16,18 +16,30 @@
 			?>
 
             <br>
-            telefono: <?php echo $this->escape($date_form->telefono); ?>
+            <strong>telefono: </strong><?php echo $this->escape($date_form->telefono); ?>
             <br>
-            cel: <?php echo $this->escape($date_form->cel); ?>
+            <strong>cel: </strong><?php echo $this->escape($date_form->cel); ?>
             <br>
-            Email: <?php echo $this->escape($date_form->email); ?>
+            <strong>Email: </strong><?php echo $this->escape($date_form->email); ?>
             <br>
-            Multiselect1: <?php echo $this->escape($date_form->multiselect1); ?>
+            <strong> Atributos personales: </strong><br><?php echo $this->escape($date_form->Categorias); ?>
             <br>
-            Sexo: <?php echo $this->escape($date_form->Sexo); ?>
+            <strong>Acróbata/Gimnasta :</strong><br> <?php echo $this->escape($date_form->multiselect1); ?>
+            <br>
+            <strong>Artista circense:</strong> <br><?php echo $this->escape($date_form->multiselect2); ?>
+            <br>
+            <strong>Deportista:</strong><br> <?php echo $this->escape($date_form->multiselect3); ?>
+            <br>
+            <strong>Bailarín/a:<br> </strong><?php echo $this->escape($date_form->multiselect4); ?>
+            <br>
+            <strong>Músico:</strong> <br><?php echo $this->escape($date_form->multiselect5); ?>
+            <br>
+            <strong>Profesionales:</strong> <br><?php echo $this->escape($date_form->multiselect6); ?>
+            <br>
+            <strong>Sexo:</strong> <?php echo $this->escape($date_form->Sexo); ?>
            
             <br>
-              id: <?php echo $this->escape($date_form->id); ?>
+              <strong>id:</strong> <?php echo $this->escape($date_form->id); ?>
             <br>
             
     <?php endforeach ?>

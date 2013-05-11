@@ -12,7 +12,7 @@ class Application_Model_Aspirantes
 	public function view()
         {
         $select = $this -> _dbTableAspirantes -> select();
-            $select->from($this -> _dbTableAspirantes,array('id','nombre', 'apellido','telefono', 'cel', 'PIN', 'email', 'multiselect1','multiselect2','Sexo', 'fechaNac','foto1','foto2','foto3'));
+            $select->from($this -> _dbTableAspirantes,array('id','nombre', 'apellido','telefono', 'cel', 'PIN', 'email','Categorias','multiselect1','multiselect2','multiselect3','multiselect4','multiselect5','multiselect6','Sexo', 'fechaNac','foto1','foto2','foto3'));
 
              return $this -> _dbTableAspirantes -> fetchAll($select);
         }
@@ -38,8 +38,8 @@ class Application_Model_Aspirantes
                     'foto2' => $foto2,
                     'foto3' => $foto3
                         );
-                var_dump($data);
-		//$this -> _dbTableAspirantes -> insert($data);
+               // var_dump($data);
+		$this -> _dbTableAspirantes -> insert($data);
 
 		
 	}

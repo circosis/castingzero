@@ -6,7 +6,9 @@ class IngresoController extends Zend_Controller_Action
     }
     public function indexAction()
     {
-
+		function implotar($value){
+			return implode(',' , $value);
+		}
 		$formulario = new Application_Form_AspirantesForm();
 		$this->view->form = $formulario;
 		if ($this->_request->isPost())
@@ -20,13 +22,13 @@ class IngresoController extends Zend_Controller_Action
 			$cel = $formulario->getValue('cel');
 			$PIN = $formulario->getValue('PIN');
 			$mail = $formulario->getValue('email');
-            $Categorias = $formulario->getValue('Categorias');
-			$multiselect1 = $formulario->getValue('multiselect1');
-			$multiselect2 = $formulario->getValue('multiselect2');
-			$multiselect3 = $formulario->getValue('multiselect3');
-			$multiselect4 = $formulario->getValue('multiselect4');
-			$multiselect5 = $formulario->getValue('multiselect5');
-			$multiselect6 = $formulario->getValue('multiselect6');
+            $Categorias = implotar($formulario->getValue('Categorias'));
+			$multiselect1 = implotar($formulario->getValue('multiselect1'));
+			$multiselect2 = implotar($formulario->getValue('multiselect2'));
+			$multiselect3 = implotar($formulario->getValue('multiselect3'));
+			$multiselect4 = implotar($formulario->getValue('multiselect4'));
+			$multiselect5 = implotar($formulario->getValue('multiselect5'));
+			$multiselect6 = implotar($formulario->getValue('multiselect6'));
 			$Sexo = $formulario->getValue('Sexo');
 			$fechaNacimiento = $formulario->getValue('fechaNac');
 			$foto1 = $formulario->getValue('foto1');
