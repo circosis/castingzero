@@ -21,15 +21,22 @@ class Application_Form_TestForm extends Zend_Form
 							'Parada' => 'Parada de manos',
 							'Tela' => 'Tela',
 							'Aro'=>'Aro',
-							'TrapecioF' =>'Trapecio Fijo',
-							'TrapecioV' =>'Trapecio Volante',
-							'TrapecioAV' =>'Trapecio a vuelo',
-							'MalabaresC' =>'Malabares - Contact',
-							'MalabaresR' =>'Malabares - Rolling',
-							'MalabaresP' =>'Malabares  - Pelotas',
-							'Clavas' =>'Clavas',
-							'Diavolo' =>'Diávolo',																																										
-							'PaloC' =>'Palo chino',																																								
+							'Equilibrista' =>'Equilibrista',
+							'Contorsionista' =>'Contorsionista'																																										
+		),1);
+		$multiselect3 = dameMultiselect('multiselect2'); 
+		$multiselect3 ->class="acrobatas";
+		$multiselect3 -> setMultiOptions(array(
+							'Parada' => 'Parada de manos',
+							'Tela' => 'Tela',
+							'Equilibrista' =>'Equilibrista',
+							'Contorsionista' =>'Contorsionista'																																										
+		),1);
+               $multiselect3 = dameMultiselect('multiselect2'); 
+		$multiselect3 ->class="acrobatas";
+		$multiselect3 -> setMultiOptions(array(
+							'Parada' => 'Parada de manos',
+							'Tela' => 'Tela',
 							'Equilibrista' =>'Equilibrista',
 							'Contorsionista' =>'Contorsionista'																																										
 		),1);

@@ -16,7 +16,10 @@ class Application_Form_AspirantesForm extends Zend_Form
         			);
 		$translator = new Zend_Translate('array', $translateValidators);
 		Zend_Validate_Abstract::setDefaultTranslator($translator);
-		
+		/*
+                 * Datos personales
+                 * 
+                 */
 		$name = new Zend_Form_Element_Text('name');
 		$name->setLabel('Nombre:')
 			 ->setRequired(true)
@@ -74,17 +77,25 @@ class Application_Form_AspirantesForm extends Zend_Form
 		'format' => 'dd.mm.yyyy',
 		)))
 		->setRequired(true);
-	
-		$check = new Zend_Form_Element_MultiCheckbox('Categorias', array(
+                /*
+                 * Skills
+                 */
+		$Categorias = new Zend_Form_Element_MultiCheckbox('Categorias', array(
 			'multiOptions' => array(
-							'Cantante' => 'Cantante',
-							'Modelo' => 'Modelo',
-							'ActorActriz'=>'Actor/actriz',
-							'AcróbataGimnasta' =>'Acróbata/Gimnasta:',
-							'Artistac' =>'Artista circense:'
-		)));
-		$check->setLabel('Categorias:');
-		
+                                                'Cantante' => 'Cantante',
+                                                'Modelo' => 'Modelo',
+                                                'ActorActriz'=>'Actor/actriz',
+                                                'AcróbataGimnasta' =>'Acróbata/Gimnasta:',
+                                                'ArtistaCircense' =>'Artista circense:',
+                                                'Deportista' =>'Deportista',
+                                                'Bailarin' =>'Bailarín/a',
+                                                'Musico' =>'Músico',
+                                                'ParkourFreeruning' =>'Parkour / Freerunning',
+                                                'Danza aérea' =>'Danza aérea (arneses)',
+                                                'Profesionales' =>'Profesionales')
+		));
+		$Categorias->setLabel('Categorias:');
+
 		$multiselect1 = dameMultiselect('multiselect1'); 
 		$multiselect1 ->class="acrobatas";
 		$multiselect1 -> setMultiOptions(array(
@@ -111,11 +122,55 @@ class Application_Form_AspirantesForm extends Zend_Form
 							'Equilibrista' =>'Equilibrista',
 							'Contorsionista' =>'Contorsionista'																																										
 		),1);
-		
+       		$multiselect3 = dameMultiselect('multiselect3'); 
+		$multiselect3 ->class="acrobatas";
+		$multiselect3 -> setMultiOptions(array(
+                                                        'Futbol'=>'Fútbol',
+                                                        'Rugby'=>'Rugby',
+                                                        'Boxeo'=>'Boxeo',
+                                                        'ArtesMarciales'=>'ArtesMarciales',
+                                                        'Atletismo'=>'Atletismo'
+                ),1);
+       		$multiselect4 = dameMultiselect('multiselect4'); 
+		$multiselect4 ->class="acrobatas";
+		$multiselect4 -> setMultiOptions(array(
+                                                        'Contemporaneo'=>'Contemporáneo',
+                                                        'Clasico'=>'Clásico',
+                                                        'Tango'=>'Tango',
+                                                        'HipHop'=>'Hip hop',
+                                                        'BreakDance'=>'Break dance',
+                                                        'PoleDance'=>'Pole Dance'
+                ),1);
+       		$multiselect5 = dameMultiselect('multiselect5'); 
+		$multiselect5 ->class="acrobatas";
+		$multiselect5 -> setMultiOptions(array(
+                                                        'Guitarra'=>'Guitarra',
+                                                        'Piano'=>'Piano',
+                                                        'Bajo'=>'Bajo',
+                                                        'Bateria'=>'Batería',
+                                                        'Saxo'=>'Saxo',
+                                                        'Trompeta'=>'Trompeta',
+                                                        'Violin'=>'Violín',
+                                                        'Contrabajo'=>'Contrabajo',
+                                                        'Violoncelo'=>'Violoncelo'
+                ),1);
+       		$multiselect6 = dameMultiselect('multiselect6'); 
+		$multiselect6 ->class="acrobatas";
+		$multiselect6 -> setMultiOptions(array(
+                                                        'Médico'=>'Médico',
+                                                        'Odontólogo'=>'Odontólogo',
+                                                        'Psicólogo'=>'Psicólogo',
+                                                        'Arquitecto'=>'Arquitecto',
+                                                        'Ingeniero'=>'Ingeniero'
+                ),1);
+
+		/*
+                 * Fotos!!
+                 */
 		$foto1 = new Zend_Form_Element_File('foto1');
 		$foto1->setLabel('Imagen 1 // Recorda que no puede pesar mas de 3mb:')
 			  ->setDestination('../htdocs/upload')
-			  ->setRequired(true)
+			 // ->setRequired(true)
 			  ->setDescription('Click Browse and choose an image');
 		$foto1->addValidator('Count', false, 1);
 		$foto1->addValidator('Size', false, 202400);
@@ -123,25 +178,27 @@ class Application_Form_AspirantesForm extends Zend_Form
 
 		$foto2 = new Zend_Form_Element_File('foto2');
 		$foto2->setLabel('Imagen 2 // Recorda que no puede pesar mas de 3mb:')
-			  ->setDestination('../htdocs/upload')
-  			  ->setRequired(true);
+			  ->setDestination('../htdocs/upload');
+  			 // ->setRequired(true);
 		$foto2->addValidator('Count', false, 1);
 		$foto2->addValidator('Size', false, 202400);
 		$foto2->addValidator('Extension', false, 'jpg');
 
 		$foto3 = new Zend_Form_Element_File('foto3');
 		$foto3->setLabel('Imagen 3 // Recorda que no puede pesar mas de 3mb:')
-			  ->setDestination('../htdocs/upload')
-			  ->setRequired(true);
+			  ->setDestination('../htdocs/upload');
+			  //->setRequired(true);
 		$foto3->addValidator('Count', false, 1);
 		$foto3->addValidator('Size', false, 202400);
 		$foto3->addValidator('Extension', false, 'jpg');
-
+                /*
+                 * Submit y addElements
+                 */
 		$submit = new Zend_Form_Element_Submit('submit');
 		$submit->class = "botonEnviar";
 		$submit->setLabel('Enviar');
 				
-		$this->addElements(array($name,$surname,$telefono,$cel,$PIN,$email,$Sexo,$fechaNacimiento,$check,$multiselect1,$multiselect2,$foto1,$foto2,$foto3,$submit));
+		$this->addElements(array($name,$surname,$telefono,$cel,$PIN,$email,$Sexo,$fechaNacimiento,$Categorias,$multiselect1,$multiselect2,$multiselect3,$multiselect4,$multiselect5,$multiselect6,$foto1,$foto2,$foto3,$submit));
 
 	}
 }

@@ -166,6 +166,66 @@ section {
 	
 	}
 }
+#multiselect3-element{
+	width:230px;
+	overflow:hidden;
+	position: absolute;
+	top: 580px;	
+	margin-left:150px;
+	#multiselect3{
+		display: none;
+		width: 230px;
+		min-height: 250px;
+		margin: 0px;
+		padding: 5px 8px 5px 5px;
+	
+	}
+}
+#multiselect4-element{
+	width:230px;
+	overflow:hidden;
+	position: absolute;
+	top: 580px;	
+	margin-left:150px;
+	#multiselect4{
+		display: none;
+		width: 230px;
+		min-height: 250px;
+		margin: 0px;
+		padding: 5px 8px 5px 5px;
+	
+	}
+}
+#multiselect5-element{
+	width:230px;
+	overflow:hidden;
+	position: absolute;
+	top: 580px;	
+	margin-left:150px;
+	#multiselect5{
+		display: none;
+		width: 230px;
+		min-height: 250px;
+		margin: 0px;
+		padding: 5px 8px 5px 5px;
+	
+	}
+}
+#multiselect6-element{
+	width:230px;
+	overflow:hidden;
+	position: absolute;
+	top: 580px;	
+	margin-left:150px;
+	#multiselect6{
+		display: none;
+		width: 230px;
+		min-height: 250px;
+		margin: 0px;
+		padding: 5px 8px 5px 5px;
+	
+	}
+}
 .botonCerrarFormu{
 	@include degradoSimple;
 	color:white;
