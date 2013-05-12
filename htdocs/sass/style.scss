@@ -124,6 +124,9 @@ section {
 			padding: 10px 0;
 		}
 	}
+        dt{
+                font-weight:bold;
+        }
 	.errors{
 		li{
 		background:red;
@@ -135,6 +138,9 @@ section {
 }
 #foto1 , #foto2, #foto3{
 	width:128px;
+}
+#multiselect1-label,#multiselect2-label,#multiselect3-label,#multiselect4-label,#multiselect5-label,#multiselect6-label{
+    display:none;
 }
 #multiselect1-element{
 	width:230px;
@@ -226,6 +232,7 @@ section {
 	
 	}
 }
+
 .botonCerrarFormu{
 	@include degradoSimple;
 	color:white;

@@ -163,6 +163,167 @@ class Application_Form_AspirantesForm extends Zend_Form
                                                         'Arquitecto'=>'Arquitecto',
                                                         'Ingeniero'=>'Ingeniero'
                 ),1);
+                /*
+                 * Perfil
+                 * 
+                 */
+                
+                $regC = new Zend_Form_Element_Select('regC'); 
+		$regC->setLabel('Registro de conducir:')
+				  	  -> setMultiOptions(array(
+							'no' => 'no',
+							'si' => 'si'
+		));
+       		$multiselect7 = dameMultiselect('multiselect7'); 
+		$multiselect7->class="tipo";
+		$multiselect7->setLabel('Tipo de vehiculo') 
+                             -> setMultiOptions(array(
+                                                        'Auto'=>'Auto',
+                                                        'Moto'=>'Moto',
+                                                        'Camion'=>'Camion'
+                ),1);
+  
+                $AceptaDesnudo = new Zend_Form_Element_Select('AceptaDesnudo'); 
+		$AceptaDesnudo->setLabel('Acepta desnudo:')
+				  	  -> setMultiOptions(array(
+							'no' => 'no',
+							'si' => 'si'
+		));
+                $AceptaRopaInterior = new Zend_Form_Element_Select('AceptaRopaInterior'); 
+		$AceptaRopaInterior->setLabel('Acepta ropa interior:')
+				  	  -> setMultiOptions(array(
+							'no' => 'no',
+							'si' => 'si'
+		));
+                $Fuma = new Zend_Form_Element_Select('Fuma'); 
+		$Fuma->setLabel('Fuma:')
+				  	  -> setMultiOptions(array(
+							'no' => 'no',
+							'si' => 'si'
+		));
+                $Tatuajes = new Zend_Form_Element_Select('Tatuajes'); 
+		$Tatuajes->setLabel('Tatuajes:')
+				  	  -> setMultiOptions(array(
+							'no' => 'no',
+							'si' => 'si'
+		));
+                $Piercings = new Zend_Form_Element_Select('Piercings'); 
+		$Piercings->setLabel('Piercings:')
+				  	  -> setMultiOptions(array(
+							'no' => 'no',
+							'si' => 'si'
+		));
+
+		$Altura = new Zend_Form_Element_Text('Altura');
+		$Altura->setLabel('Altura:')
+			 ->setRequired(true);
+		//$Altura->addValidator('alpha', false, array('messages' => 'El campo nombre solo puede contener letras'));
+                
+		$Peso = new Zend_Form_Element_Text('Peso');
+		$Peso->setLabel('Peso:')
+			 ->setRequired(true);
+		//$Peso->addValidator('alpha', false, array('messages' => 'El campo nombre solo puede contener letras'));
+                
+		$Busto = new Zend_Form_Element_Text('Busto');
+		$Busto->setLabel('Busto:')
+			 ->setRequired(true);
+		//$Busto->addValidator('alpha', false, array('messages' => 'El campo nombre solo puede contener letras'));
+
+		$Cintura = new Zend_Form_Element_Text('Cintura');
+		$Cintura->setLabel('Cintura:')
+			 ->setRequired(true);
+		//$Cintura->addValidator('alpha', false, array('messages' => 'El campo nombre solo puede contener letras'));
+                
+		$Cadera = new Zend_Form_Element_Text('Cadera');
+		$Cadera->setLabel('Cadera:')
+			 ->setRequired(true);
+		//$Cadera->addValidator('alpha', false, array('messages' => 'El campo nombre solo puede contener letras'));
+
+                $ColorDeOjos = new Zend_Form_Element_Select('ColorDeOjos'); 
+                $ColorDeOjos->setLabel('Color de ojos:')
+                            -> setMultiOptions(array(
+                                          'Marrones' => 'Marrones',
+                                          'Negros' => 'Negros',
+                                          'Celestes' => 'Celestes',
+                                          'Verdes' => 'Verdes'    
+                ));
+
+                $ColorDeCabello = new Zend_Form_Element_Select('ColorDeCabello'); 
+                $ColorDeCabello->setLabel('Color de cabello:')
+                               -> setMultiOptions(array(
+                                          'castaño' => 'castaño',
+                                          'Rubio' => 'Rubio',
+                                          'Pelirojo' => 'Pelirojo',
+                                          'Canoso' => 'Canoso',
+                                          'Negro' => 'Negro'
+                ));
+
+                $TipoDeCabello = new Zend_Form_Element_Select('TipoDeCabello'); 
+                $TipoDeCabello->setLabel('Tipo de cabello:')
+                              -> setMultiOptions(array(
+                                          'Ondulado' => 'Ondulado',
+                                          'Lacio' => 'Lacio',
+                                          'Rulos' => 'Rulos',
+                                          'Canoso' => 'Canoso',
+                                          'Rastas' => 'Rastas'
+                ));
+
+                $LargoDelCabello = new Zend_Form_Element_Select('LargoDelCabello'); 
+                $LargoDelCabello->setLabel('Largo del cabello:')
+                                -> setMultiOptions(array(
+                                              'Largo' => 'Largo',
+                                              'Medio' => 'Medio',
+                                              'Corto' => 'Corto',
+                                              'Pelado' => 'Pelado'
+                ));
+                $Etnia = new Zend_Form_Element_Select('Etnia'); 
+                $Etnia->setLabel('Etnia:')
+                      -> setMultiOptions(array(
+                                  'Anglosajona' => 'Anglosajona',
+                                  'Latina' => 'Latina',
+                                  'Oriental' => 'Oriental',
+                                  'Afroamericano' => 'Afroamericano',
+                                  'ArabeTurco' => 'Arabe / Turco',
+                                  'AborigenLatinoamericano' => 'Aborigen latinoamericano'
+                ));
+                
+                $Tez = new Zend_Form_Element_Select('Tez'); 
+                $Tez->setLabel('Tez:')
+                    -> setMultiOptions(array(
+                                  'Blanca' => 'Blanca',
+                                  'Negra' => 'Negra',
+                                  'Amarilla' => 'Amarilla',
+                                  'Trigueña' => 'Trigueña'
+                ));
+                
+		$TallePantalon  = new Zend_Form_Element_Text('TallePantalon');
+		$TallePantalon->setLabel('Talle de pantalón:')
+                              ->setRequired(true);
+		//$TallePantalon->addValidator('alpha', false, array('messages' => 'El campo nombre solo puede contener letras'));
+                
+
+		$TalleCamisa  = new Zend_Form_Element_Text('TalleCamisa');
+		$TalleCamisa->setLabel('Talle de camisa:')
+                              ->setRequired(true);
+		//$TalleCamisa->addValidator('alpha', false, array('messages' => 'El campo nombre solo puede contener letras'));
+                
+		$TalleCalzado  = new Zend_Form_Element_Text('TalleCalzado');
+		$TalleCalzado->setLabel('Talle de Calzado:')
+                              ->setRequired(true);
+		//$TalleCalzado->addValidator('alpha', false, array('messages' => 'El campo nombre solo puede contener letras'));
+
+       		$multiselect8 = dameMultiselect('multiselect8'); 
+		$multiselect8->class="tipo";
+                             
+		$multiselect8 ->setLabel('Idioma')
+                              -> setMultiOptions(array(
+                                                        'Ingles'=>'Ingles',
+                                                        'Frances'=>'Francés',
+                                                        'Aleman'=>'Alemán',
+                                                        'Portugues'=>'Portugués',
+                                                        'Italiano'=>'Italiano',
+                                                        'Aleman'=>'Alemán'
+                ),1);
 
 		/*
                  * Fotos!!
@@ -198,8 +359,48 @@ class Application_Form_AspirantesForm extends Zend_Form
 		$submit->class = "botonEnviar";
 		$submit->setLabel('Enviar');
 				
-		$this->addElements(array($name,$surname,$telefono,$cel,$PIN,$email,$Sexo,$fechaNacimiento,$Categorias,$multiselect1,$multiselect2,$multiselect3,$multiselect4,$multiselect5,$multiselect6,$foto1,$foto2,$foto3,$submit));
-
+		$this->addElements(array(
+                    $name,
+                    $surname,
+                    $telefono,
+                    $cel,
+                    $PIN,
+                    $email,
+                    $Sexo,
+                    $fechaNacimiento,
+                    $Categorias,
+                    $multiselect1,
+                    $multiselect2,
+                    $multiselect3,
+                    $multiselect4,
+                    $multiselect5,
+                    $multiselect6,
+                    $regC,
+                    $multiselect7,
+                    $AceptaDesnudo,
+                    $AceptaRopaInterior,
+                    $Fuma,
+                    $Tatuajes,
+                    $Piercings,
+                    $Altura,
+                    $Peso,
+                    $Busto,
+                    $Cintura,
+                    $Cadera, 
+                    $ColorDeOjos, 
+                    $ColorDeCabello,
+                    $TipoDeCabello,
+                    $LargoDelCabello, 
+                    $Etnia ,
+                    $Tez ,
+                    $TallePantalon,
+                    $TalleCamisa,
+                    $TalleCalzado,
+                    $multiselect8,
+                    $foto1,
+                    $foto2,
+                    $foto3,
+                    $submit));
 	}
 }
 
