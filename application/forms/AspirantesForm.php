@@ -71,7 +71,7 @@ class Application_Form_AspirantesForm extends Zend_Form
 		->setJQueryParam('changeYear', 'true')
 		->setJqueryParam('changeMonth', 'true')
 		->setJqueryParam('regional', 'de')
-		->setJqueryParam('yearRange', "1980:2000")
+		->setJqueryParam('yearRange', "1920:2013")
 		->addValidator(new Zend_Validate_Date(
 		array(
 		'format' => 'dd.mm.yyyy',
