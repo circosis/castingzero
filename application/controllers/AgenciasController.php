@@ -12,7 +12,7 @@ class AgenciasController extends Zend_Controller_Action
     {
 	$dates_form = new Application_Model_Aspirantes();
 	$this->view->dates_form = $dates_form->view();
-	}
+    }
 }
 
 
