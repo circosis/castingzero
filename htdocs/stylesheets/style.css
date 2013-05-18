@@ -118,11 +118,11 @@ section {
 }
 /* line 93, ../sass/style.scss */
 section input {
-  padding: 0;
+  padding: 0px;
 }
 /* line 96, ../sass/style.scss */
 section label {
-  padding: 4px;
+  padding: 0px;
 }
 
 /* line 100, ../sass/style.scss */
@@ -150,15 +150,23 @@ section label {
 .zend_form dd {
   margin: 0;
 }
+/* line 120, ../sass/style.scss */
+.zend_form dd input[type="text"] {
+  width: 40%;
+}
 /* line 123, ../sass/style.scss */
+.zend_form dd select {
+  width: 30%;
+}
+/* line 126, ../sass/style.scss */
 .zend_form dd .botonEnviar {
   padding: 10px 0;
 }
-/* line 127, ../sass/style.scss */
+/* line 130, ../sass/style.scss */
 .zend_form dt {
   font-weight: bold;
 }
-/* line 131, ../sass/style.scss */
+/* line 134, ../sass/style.scss */
 .zend_form .errors li {
   background: red;
   color: white;
@@ -166,17 +174,17 @@ section label {
   padding: 0px;
 }
 
-/* line 139, ../sass/style.scss */
+/* line 142, ../sass/style.scss */
 #foto1, #foto2, #foto3 {
   width: 128px;
 }
 
-/* line 142, ../sass/style.scss */
+/* line 145, ../sass/style.scss */
 #multiselect1-label, #multiselect2-label, #multiselect3-label, #multiselect4-label, #multiselect5-label, #multiselect6-label {
   display: none;
 }
 
-/* line 145, ../sass/style.scss */
+/* line 148, ../sass/style.scss */
 #multiselect1-element {
   width: 230px;
   overflow: hidden;
@@ -184,7 +192,7 @@ section label {
   top: 580px;
   margin-left: 150px;
 }
-/* line 151, ../sass/style.scss */
+/* line 154, ../sass/style.scss */
 #multiselect1-element #multiselect1 {
   display: none;
   width: 250px;
@@ -192,7 +200,7 @@ section label {
   padding: 5px 8px 5px 5px;
 }
 
-/* line 160, ../sass/style.scss */
+/* line 163, ../sass/style.scss */
 #multiselect2-element {
   width: 230px;
   overflow: hidden;
@@ -200,7 +208,7 @@ section label {
   top: 580px;
   margin-left: 150px;
 }
-/* line 166, ../sass/style.scss */
+/* line 169, ../sass/style.scss */
 #multiselect2-element #multiselect2 {
   display: none;
   width: 230px;
@@ -209,7 +217,7 @@ section label {
   padding: 5px 8px 5px 5px;
 }
 
-/* line 175, ../sass/style.scss */
+/* line 178, ../sass/style.scss */
 #multiselect3-element {
   width: 230px;
   overflow: hidden;
@@ -217,7 +225,7 @@ section label {
   top: 580px;
   margin-left: 150px;
 }
-/* line 181, ../sass/style.scss */
+/* line 184, ../sass/style.scss */
 #multiselect3-element #multiselect3 {
   display: none;
   width: 230px;
@@ -226,7 +234,7 @@ section label {
   padding: 5px 8px 5px 5px;
 }
 
-/* line 190, ../sass/style.scss */
+/* line 193, ../sass/style.scss */
 #multiselect4-element {
   width: 230px;
   overflow: hidden;
@@ -234,7 +242,7 @@ section label {
   top: 580px;
   margin-left: 150px;
 }
-/* line 196, ../sass/style.scss */
+/* line 199, ../sass/style.scss */
 #multiselect4-element #multiselect4 {
   display: none;
   width: 230px;
@@ -243,7 +251,7 @@ section label {
   padding: 5px 8px 5px 5px;
 }
 
-/* line 205, ../sass/style.scss */
+/* line 208, ../sass/style.scss */
 #multiselect5-element {
   width: 230px;
   overflow: hidden;
@@ -251,7 +259,7 @@ section label {
   top: 580px;
   margin-left: 150px;
 }
-/* line 211, ../sass/style.scss */
+/* line 214, ../sass/style.scss */
 #multiselect5-element #multiselect5 {
   display: none;
   width: 230px;
@@ -260,7 +268,7 @@ section label {
   padding: 5px 8px 5px 5px;
 }
 
-/* line 220, ../sass/style.scss */
+/* line 223, ../sass/style.scss */
 #multiselect6-element {
   width: 230px;
   overflow: hidden;
@@ -268,7 +276,7 @@ section label {
   top: 580px;
   margin-left: 150px;
 }
-/* line 226, ../sass/style.scss */
+/* line 229, ../sass/style.scss */
 #multiselect6-element #multiselect6 {
   display: none;
   width: 230px;
@@ -277,7 +285,7 @@ section label {
   padding: 5px 8px 5px 5px;
 }
 
-/* line 236, ../sass/style.scss */
+/* line 239, ../sass/style.scss */
 .botonCerrarFormu {
   background-color: #46827d;
   *zoom: 1;
@@ -292,16 +300,16 @@ section label {
   color: white;
   line-height: 38px;
 }
-/* line 240, ../sass/style.scss */
+/* line 243, ../sass/style.scss */
 .botonCerrarFormu .boton-aceptar {
   padding: 11px 15%;
   cursor: pointer;
 }
-/* line 243, ../sass/style.scss */
+/* line 246, ../sass/style.scss */
 .botonCerrarFormu .boton-aceptar:hover {
   background: #333;
 }
-/* line 247, ../sass/style.scss */
+/* line 250, ../sass/style.scss */
 .botonCerrarFormu .boton-cancelar {
   padding: 11px 15%;
   cursor: pointer;
@@ -324,12 +332,12 @@ section label {
   filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#023e56', endColorstr='#012833',GradientType=0 );
   /* IE6-8 */
 }
-/* line 251, ../sass/style.scss */
+/* line 254, ../sass/style.scss */
 .botonCerrarFormu .boton-cancelar:hover {
   background: #333;
 }
 
-/* line 257, ../sass/style.scss */
+/* line 260, ../sass/style.scss */
 .leyedapop {
   background: gray;
   color: black;
@@ -337,13 +345,13 @@ section label {
   font-size: 11px;
 }
 
-/* line 263, ../sass/style.scss */
+/* line 266, ../sass/style.scss */
 .IndexText {
   display: block;
   min-height: 300px;
   float: left;
 }
-/* line 267, ../sass/style.scss */
+/* line 270, ../sass/style.scss */
 .IndexText h1 {
   text-align: left;
   font-size: 30px;
@@ -352,7 +360,7 @@ section label {
   font-weight: 400;
   letter-spacing: -2px;
 }
-/* line 275, ../sass/style.scss */
+/* line 278, ../sass/style.scss */
 .IndexText p {
   font-size: 15px;
   text-align: start;
@@ -364,12 +372,12 @@ section label {
   display: block;
   margin: 24px 0;
 }
-/* line 286, ../sass/style.scss */
+/* line 289, ../sass/style.scss */
 .IndexText a {
   clear: both;
 }
 
-/* line 290, ../sass/style.scss */
+/* line 293, ../sass/style.scss */
 #submit {
   text-decoration: none;
   color: white;
@@ -393,7 +401,7 @@ section label {
   font-style: italic;
   border: none;
 }
-/* line 300, ../sass/style.scss */
+/* line 303, ../sass/style.scss */
 #submit:hover {
   background: #023e56;
   /* Old browsers */

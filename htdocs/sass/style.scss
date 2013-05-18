@@ -91,10 +91,10 @@ section {
 	padding:10px;
 	font-size:13px;
 	input{
-		padding:0;
+		padding:0px;
 	}
 	label{
-		padding:4px;
+		padding:0px;
 	}
 }
 .footer{
@@ -117,8 +117,11 @@ section {
 .zend_form {
 	dd{
 		margin:0;
-		input{
-			//width:100%;
+		input[type="text"]{
+			width:40%;
+		}
+                select{
+			width:30%;
 		}
 		.botonEnviar{
 			padding: 10px 0;
