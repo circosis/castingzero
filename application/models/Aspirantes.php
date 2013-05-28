@@ -16,12 +16,13 @@ class Application_Model_Aspirantes
 
              return $this -> _dbTableAspirantes -> fetchAll($select);
         }
-	public function add($name,$surname,$telefono,$cel,$PIN,$email,$Sexo,$fechaNacimiento,$Categorias,$multiselect1,$multiselect2,$multiselect3,$multiselect4,$multiselect5,$multiselect6,$regC,$multiselect7,$AceptaDesnudo,$AceptaRopaInterior,$Fuma,$Tatuajes,$Piercings,$Altura,$Peso,$Busto,$Cintura,$Cadera, $ColorDeOjos, $ColorDeCabello,$TipoDeCabello,$LargoDelCabello, $Etnia ,$Tez ,$TallePantalon,$TalleCamisa,$TalleCalzado,$multiselect8,$foto1,$foto2,$foto3)
+	public function add($name,$surname,$nacionalidad,$telefono,$cel,$PIN,$email,$Sexo,$fechaNacimiento,$Categorias,$multiselect1,$multiselect2,$multiselect3,$multiselect4,$multiselect5,$multiselect6,$regC,$multiselect7,$AceptaDesnudo,$AceptaRopaInterior,$Fuma,$Tatuajes,$Piercings,$Altura,$Peso,$Busto,$Cintura,$Cadera, $ColorDeOjos, $ColorDeCabello,$TipoDeCabello,$LargoDelCabello, $Etnia ,$Tez ,$TallePantalon,$TalleCamisa,$TalleCalzado,$multiselect8,$foto1,$foto2,$foto3)
 	{
 		$data = array (
                     'pendiente' => 'false',
                     'nombre' => $name , 
                     'apellido' => $surname,
+                    'Nacionalidad' => $nacionalidad,
                     'telefono' => $telefono,
                     'cel' => $cel,'PIN' => $PIN,
                     'email' => $email,

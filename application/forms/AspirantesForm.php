@@ -6,7 +6,12 @@ class Application_Form_AspirantesForm extends Zend_Form
 		function dameMultiselect($name){
 			return new Zend_Form_Element_Multiselect($name); 
 		}
-
+                $this->clearDecorators() 
+                         ->addDecorator('FormElements') 
+                         ->addDecorator('HtmlTag', array('tag' => 'div')) 
+                         ->addDecorator('Form');  
+                
+                
 		$translateValidators = array(
         				Zend_Validate_NotEmpty::IS_EMPTY => 'Los campos no pueden estar vacios',
         				Zend_Validate_Regex::NOT_MATCH => 'Invalid value entered',
@@ -24,14 +29,33 @@ class Application_Form_AspirantesForm extends Zend_Form
 		$name->setLabel('Nombre:')
 			 ->setRequired(true)
 			 ->addValidator('StringLength', false, array(4, 25));
-		$name->addValidator('alpha', false, array('messages' => 'El campo nombre solo puede contener letras'));
-		
+                $name->addValidator('alpha', true, array('allowWhiteSpace' => true));
+
 		$surname = new Zend_Form_Element_Text ('surname');
 		$surname->setLabel('Apellido:')
 				 ->addValidator('StringLength', false, array(4, 25))
 			    ->setRequired(true);
-		$surname->addValidator('alpha', false, array('messages' => 'El campo apellido solo puede contener letras'));
-
+		$surname->addValidator('alpha', true, array('allowWhiteSpace' => true));
+                
+                $nacionalidad = new Zend_Form_Element_Text ('Nacionalidad');
+		$nacionalidad->setLabel('Nacionalidad:')
+				 ->addValidator('StringLength', false, array(4, 25))
+			    ->setRequired(true);
+		$nacionalidad->addValidator('alpha', true, array('allowWhiteSpace' => true));
+                $tipoD = new Zend_Form_Element_Select('tipoD'); 
+		$tipoD->setLabel('Tipo:')
+				  	  -> setMultiOptions(array(
+							'DNI' => 'DNI', 
+							'LE' => 'LE',
+                                                        'LC' => 'LC'
+		))
+                        ->setRequired(true);
+                $ndocumento = new Zend_Form_Element_Text ('ndocumento');
+		$ndocumento->setLabel('numero de documento:')
+				 ->addValidator('StringLength', false, array(6, 25))
+				 ->setRequired(true);
+		$ndocumento->addValidator('Digits', false, array('messages' => 'El campo telefono solo puede contener Numeros'));
+                
 		$telefono = new Zend_Form_Element_Text ('telefono');
 		$telefono->setLabel('telefono:')
 				 ->addValidator('StringLength', false, array(8, 25))
@@ -80,6 +104,43 @@ class Application_Form_AspirantesForm extends Zend_Form
                 /*
                  * Skills
                  */
+                
+                $namepadre = new Zend_Form_Element_Text('namepadre');
+		$namepadre->setLabel('Nombre y apellido padre:')
+			   ->addValidator('StringLength', false, array(4, 220));
+                $namepadre->addValidator('alpha', true, array('allowWhiteSpace' => true)); 
+                
+                $tipoPadre = new Zend_Form_Element_Select('$tipoPadre'); 
+		$tipoPadre->setLabel('Tipo:')
+				  	  -> setMultiOptions(array(
+							'DNI' => 'DNI', 
+							'LE' => 'LE',
+                                                        'LC' => 'LC'
+		));
+                     
+                $ndocumentoPadre = new Zend_Form_Element_Text ('$ndocumentoPadre');
+		$ndocumentoPadre->setLabel('numero de documento:')
+				 ->addValidator('StringLength', false, array(6, 25));				 
+		$ndocumentoPadre->addValidator('Digits', false, array('messages' => 'El campo telefono solo puede contener Numeros'));
+                
+                $namemadre = new Zend_Form_Element_Text('namemadre');
+		$namemadre->setLabel('Nombre y apellido madre:')
+			   ->addValidator('StringLength', false, array(4, 220));
+                $namemadre->addValidator('alpha', true, array('allowWhiteSpace' => true)); 
+
+                $tipoMadre = new Zend_Form_Element_Select('$tipoMadre'); 
+		$tipoMadre->setLabel('Tipo:')
+				  	  -> setMultiOptions(array(
+							'DNI' => 'DNI', 
+							'LE' => 'LE',
+                                                        'LC' => 'LC'
+		));
+                
+                $ndocumentoMadre = new Zend_Form_Element_Text ('$ndocumentoMadre');
+		$ndocumentoMadre->setLabel('numero de documento:')
+				 ->addValidator('StringLength', false, array(6, 25));
+		$ndocumentoMadre->addValidator('Digits', false, array('messages' => 'El campo telefono solo puede contener Numeros'));
+
 		$Categorias = new Zend_Form_Element_MultiCheckbox('Categorias', array(
 			'multiOptions' => array(
                                                 'Cantante' => 'Cantante',
@@ -120,7 +181,9 @@ class Application_Form_AspirantesForm extends Zend_Form
 							'Diavolo' =>'Diávolo',																																										
 							'PaloC' =>'Palo chino',																																								
 							'Equilibrista' =>'Equilibrista',
-							'Contorsionista' =>'Contorsionista'																																										
+							'Contorsionista' =>'Contorsionista',
+                                                        'cyrWhell'=>'Cyr whell',
+                                                        'ruedaAle'=>'Rueda alemana'
 		),1);
        		$multiselect3 = dameMultiselect('multiselect3'); 
 		$multiselect3 ->class="acrobatas";
@@ -215,7 +278,7 @@ class Application_Form_AspirantesForm extends Zend_Form
 		));
 
 		$Altura = new Zend_Form_Element_Text('Altura');
-		$Altura->setLabel('Altura:')
+		$Altura->setLabel('Altura:(En centimetros)')
 			 ->setRequired(true);
 		//$Altura->addValidator('alpha', false, array('messages' => 'El campo nombre solo puede contener letras'));
                 
@@ -225,18 +288,18 @@ class Application_Form_AspirantesForm extends Zend_Form
 		//$Peso->addValidator('alpha', false, array('messages' => 'El campo nombre solo puede contener letras'));
                 
 		$Busto = new Zend_Form_Element_Text('Busto');
-		$Busto->setLabel('Busto:')
-			 ->setRequired(true);
+		$Busto->setLabel('Busto:(Solo Mujeres, en centimetros)');
+			// ->setRequired(true);
 		//$Busto->addValidator('alpha', false, array('messages' => 'El campo nombre solo puede contener letras'));
 
 		$Cintura = new Zend_Form_Element_Text('Cintura');
-		$Cintura->setLabel('Cintura:')
-			 ->setRequired(true);
+		$Cintura->setLabel('Cintura:(Solo Mujeres, en centimetros)');
+			 //->setRequired(true);
 		//$Cintura->addValidator('alpha', false, array('messages' => 'El campo nombre solo puede contener letras'));
                 
 		$Cadera = new Zend_Form_Element_Text('Cadera');
-		$Cadera->setLabel('Cadera:')
-			 ->setRequired(true);
+		$Cadera->setLabel('Cadera:(Solo Mujeres, en centimetros)');
+			 //->setRequired(true);
 		//$Cadera->addValidator('alpha', false, array('messages' => 'El campo nombre solo puede contener letras'));
 
                 $ColorDeOjos = new Zend_Form_Element_Select('ColorDeOjos'); 
@@ -328,6 +391,7 @@ class Application_Form_AspirantesForm extends Zend_Form
 		/*
                  * Fotos!!
                  */
+                
 		$foto1 = new Zend_Form_Element_File('foto1');
 		$foto1->setLabel('Imagen 1 // Recorda que no puede pesar mas de 3mb:')
 			  ->setDestination('../htdocs/upload')
@@ -358,16 +422,31 @@ class Application_Form_AspirantesForm extends Zend_Form
 		$submit = new Zend_Form_Element_Submit('submit');
 		$submit->class = "botonEnviar";
 		$submit->setLabel('Enviar');
-				
+                
+	          
 		$this->addElements(array(
                     $name,
                     $surname,
+                    $nacionalidad,
+                    $tipoD,
+                    $ndocumento,
                     $telefono,
                     $cel,
                     $PIN,
                     $email,
                     $Sexo,
-                    $fechaNacimiento,
+                    $fechaNacimiento));
+
+                $this->addElements(array(
+                    $namepadre,
+                    $tipoPadre,
+                    $ndocumentoPadre,
+                    $namemadre,
+                    $tipoMadre,
+                    $ndocumentoMadre
+               ));
+
+                $this->addElements(array(
                     $Categorias,
                     $multiselect1,
                     $multiselect2,
@@ -401,6 +480,7 @@ class Application_Form_AspirantesForm extends Zend_Form
                     $foto2,
                     $foto3,
                     $submit));
+              
 	}
 }
 
