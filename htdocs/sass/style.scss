@@ -1,4 +1,5 @@
 @import 'text.css';
+@import "blueprint/form";
 @import 'reset.css';
 @import "compass/utilities";
 @import "compass/typography";
@@ -92,6 +93,8 @@ section {
 	font-size:13px;
 	input{
 		padding:0px;
+                @include border-radius(4px, 4px);
+                 @blueprint-form-borders;
 	}
 	label{
 		padding:0px;
@@ -235,7 +238,19 @@ section {
 	
 	}
 }
-
+#ndocumentoMadre-element{
+    border-bottom: 1px solid black;
+    margin-bottom: 16px;
+    padding-bottom: 16px;
+}
+#namepadre-label{
+    border-top: 1px solid black;
+    margin-top: 16px;
+    padding-top: 16px;
+}
+#tipoMadre,#tipoPadre,#tipoD{
+    width:50px;
+}
 .botonCerrarFormu{
 	@include degradoSimple;
 	color:white;

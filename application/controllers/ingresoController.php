@@ -18,6 +18,7 @@ class IngresoController extends Zend_Controller_Action
 			{
 			$name = $formulario->getValue('name');
 			$surname = $formulario->getValue('surname');
+                        $nacionalidad = $formulario->getValue('Nacionalidad');
 			$telefono = $formulario->getValue('telefono');
 			$cel = $formulario->getValue('cel');
 			$PIN = $formulario->getValue('PIN');
@@ -58,7 +59,7 @@ class IngresoController extends Zend_Controller_Action
                         $multiselect8 = implotar($formulario->getValue('multiselect8'));
                         
 			$register = new Application_Model_Aspirantes();
-			$register -> add($name,$surname,$telefono,$cel,$PIN,$email,$Sexo,$fechaNacimiento,$Categorias,$multiselect1,$multiselect2,$multiselect3,$multiselect4,$multiselect5,$multiselect6,$regC,$multiselect7,$AceptaDesnudo,$AceptaRopaInterior,$Fuma,$Tatuajes,$Piercings,$Altura,$Peso,$Busto,$Cintura,$Cadera, $ColorDeOjos, $ColorDeCabello,$TipoDeCabello,$LargoDelCabello, $Etnia ,$Tez ,$TallePantalon,$TalleCamisa,$TalleCalzado,$multiselect8,$foto1,$foto2,$foto3);
+			$register -> add($name,$surname,$nacionalidad,$telefono,$cel,$PIN,$email,$Sexo,$fechaNacimiento,$Categorias,$multiselect1,$multiselect2,$multiselect3,$multiselect4,$multiselect5,$multiselect6,$regC,$multiselect7,$AceptaDesnudo,$AceptaRopaInterior,$Fuma,$Tatuajes,$Piercings,$Altura,$Peso,$Busto,$Cintura,$Cadera, $ColorDeOjos, $ColorDeCabello,$TipoDeCabello,$LargoDelCabello, $Etnia ,$Tez ,$TallePantalon,$TalleCamisa,$TalleCalzado,$multiselect8,$foto1,$foto2,$foto3);
 			$this->view->form = 'Tus datos fueron enviados correctamente. Casting Zero los avaluará.'; 
 			}
 		}
