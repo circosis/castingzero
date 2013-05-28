@@ -2,15 +2,17 @@
 
 class Application_Form_AspirantesForm extends Zend_Form
 {
+    
 	public function init(){
 		function dameMultiselect($name){
 			return new Zend_Form_Element_Multiselect($name); 
 		}
-                $this->clearDecorators() 
-                         ->addDecorator('FormElements') 
-                         ->addDecorator('HtmlTag', array('tag' => 'div')) 
-                         ->addDecorator('Form');  
-                
+$this->clearDecorators() 
+ ->addDecorator('FormElements') 
+ ->addDecorator('HtmlTag', array('tag' => 'div', 'class' => 'zend_form')) 
+ ->addDecorator('Form') 
+ ->setElementDecorators(array( array('ViewHelper'), array('Errors'), array('Description', array('tag' => 'span', 'class' => 'element-description')), array('Label', array('separator' => ' ')), array('HtmlTag', array('tag' => 'p', 'class' => 'element-group') ), ));                
+ 
                 
 		$translateValidators = array(
         				Zend_Validate_NotEmpty::IS_EMPTY => 'Los campos no pueden estar vacios',
@@ -29,6 +31,7 @@ class Application_Form_AspirantesForm extends Zend_Form
 		$name->setLabel('Nombre:')
 			 ->setRequired(true)
 			 ->addValidator('StringLength', false, array(4, 25));
+                        
                 $name->addValidator('alpha', true, array('allowWhiteSpace' => true));
 
 		$surname = new Zend_Form_Element_Text ('surname');
@@ -106,8 +109,9 @@ class Application_Form_AspirantesForm extends Zend_Form
                  */
                 
                 $namepadre = new Zend_Form_Element_Text('namepadre');
-		$namepadre->setLabel('Nombre y apellido padre:')
-			   ->addValidator('StringLength', false, array(4, 220));
+		$namepadre->addDecorator('HtmlTag', array('tag'=>'div', 'class'=>'fieldItemValue', 'openOnly'=>true, 'placement'=>'prepend'));
+                $namepadre->setLabel('Nombre y apellido padre:')
+			  ->addValidator('StringLength', false, array(4, 220));
                 $namepadre->addValidator('alpha', true, array('allowWhiteSpace' => true)); 
                 
                 $tipoPadre = new Zend_Form_Element_Select('$tipoPadre'); 
@@ -140,6 +144,7 @@ class Application_Form_AspirantesForm extends Zend_Form
 		$ndocumentoMadre->setLabel('numero de documento:')
 				 ->addValidator('StringLength', false, array(6, 25));
 		$ndocumentoMadre->addValidator('Digits', false, array('messages' => 'El campo telefono solo puede contener Numeros'));
+                $ndocumentoMadre->addDecorator('HtmlTag', array('tag'=>'div', 'closeOnly'=>true, 'placement'=>'append'));
 
 		$Categorias = new Zend_Form_Element_MultiCheckbox('Categorias', array(
 			'multiOptions' => array(
@@ -155,6 +160,7 @@ class Application_Form_AspirantesForm extends Zend_Form
                                                 'Danza aérea' =>'Danza aérea (arneses)',
                                                 'Profesionales' =>'Profesionales')
 		));
+                
 		$Categorias->setLabel('Categorias:');
 
 		$multiselect1 = dameMultiselect('multiselect1'); 
@@ -480,6 +486,7 @@ class Application_Form_AspirantesForm extends Zend_Form
                     $foto2,
                     $foto3,
                     $submit));
+                                
               
 	}
 }
