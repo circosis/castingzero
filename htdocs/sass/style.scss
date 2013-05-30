@@ -91,11 +91,6 @@ section {
 	margin:10px;
 	padding:10px;
 	font-size:13px;
-	input{
-		padding:0px;
-                @include border-radius(4px, 4px);
-                 @blueprint-form-borders;
-	}
 	label{
 		padding:0px;
 	}
@@ -120,11 +115,8 @@ section {
 .zend_form {
 	dd{
 		margin:0;
-		input[type="text"]{
-			width:40%;
-		}
                 select{
-			width:30%;
+			width:250px;
 		}
 		.botonEnviar{
 			padding: 10px 0;
@@ -142,8 +134,14 @@ section {
 		}
 	}
 }
-#foto1 , #foto2, #foto3{
-	width:128px;
+input[type="text"]{
+        width:250px;
+        padding:0px;
+        @include border-radius(4px, 4px);
+         @blueprint-form-borders;
+}
+#foto1 , #foto2, #foto3, #cv{
+	width:130px;
 }
 #multiselect1-label,#multiselect2-label,#multiselect3-label,#multiselect4-label,#multiselect5-label,#multiselect6-label{
     display:none;
@@ -238,15 +236,14 @@ section {
 	
 	}
 }
-#ndocumentoMadre-element{
-    border-bottom: 1px solid black;
-    margin-bottom: 16px;
-    padding-bottom: 16px;
-}
-#namepadre-label{
-    border-top: 1px solid black;
-    margin-top: 16px;
-    padding-top: 16px;
+.padres{
+    background: #333;
+    color: white;
+    padding: 10px;
+    margin: 10px 0;
+    border: 2px solid whitesmoke;
+    @include border-radius(10px);
+    text-shadow: 2px 2px black;
 }
 #tipoMadre,#tipoPadre,#tipoD{
     width:50px;

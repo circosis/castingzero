@@ -7,11 +7,11 @@ class Application_Form_AspirantesForm extends Zend_Form
 		function dameMultiselect($name){
 			return new Zend_Form_Element_Multiselect($name); 
 		}
-$this->clearDecorators() 
- ->addDecorator('FormElements') 
- ->addDecorator('HtmlTag', array('tag' => 'div', 'class' => 'zend_form')) 
- ->addDecorator('Form') 
- ->setElementDecorators(array( array('ViewHelper'), array('Errors'), array('Description', array('tag' => 'span', 'class' => 'element-description')), array('Label', array('separator' => ' ')), array('HtmlTag', array('tag' => 'p', 'class' => 'element-group') ), ));                
+        $this->clearDecorators() 
+         ->addDecorator('FormElements') 
+         ->addDecorator('HtmlTag', array('tag' => 'div', 'class' => 'zend_form')) 
+         ->addDecorator('Form') 
+         ->setElementDecorators(array( array('ViewHelper'), array('Errors'), array('Description', array('tag' => 'span', 'class' => 'element-description')), array('Label', array('separator' => ' ')), array('HtmlTag', array('tag' => 'p', 'class' => 'element-group') ), ));                
  
                 
 		$translateValidators = array(
@@ -104,13 +104,12 @@ $this->clearDecorators()
 		'format' => 'dd.mm.yyyy',
 		)))
 		->setRequired(true);
+                $fechaNacimiento->addDecorator('HtmlTag', array('tag'=>'div','class'=>'padres', 'openOnly'=>true, 'placement'=>'append'));
                 /*
                  * Skills
                  */
-                
                 $namepadre = new Zend_Form_Element_Text('namepadre');
-		$namepadre->addDecorator('HtmlTag', array('tag'=>'div', 'class'=>'fieldItemValue', 'openOnly'=>true, 'placement'=>'prepend'));
-                $namepadre->setLabel('Nombre y apellido padre:')
+                $namepadre->setLabel('Nombre y apellido padre (solo menores)')
 			  ->addValidator('StringLength', false, array(4, 220));
                 $namepadre->addValidator('alpha', true, array('allowWhiteSpace' => true)); 
                 
@@ -123,12 +122,12 @@ $this->clearDecorators()
 		));
                      
                 $ndocumentoPadre = new Zend_Form_Element_Text ('$ndocumentoPadre');
-		$ndocumentoPadre->setLabel('numero de documento:')
+		$ndocumentoPadre->setLabel('n° documento padre:')
 				 ->addValidator('StringLength', false, array(6, 25));				 
 		$ndocumentoPadre->addValidator('Digits', false, array('messages' => 'El campo telefono solo puede contener Numeros'));
                 
                 $namemadre = new Zend_Form_Element_Text('namemadre');
-		$namemadre->setLabel('Nombre y apellido madre:')
+		$namemadre->setLabel('Nombre y apellido madre (solo menores)')
 			   ->addValidator('StringLength', false, array(4, 220));
                 $namemadre->addValidator('alpha', true, array('allowWhiteSpace' => true)); 
 
@@ -141,7 +140,7 @@ $this->clearDecorators()
 		));
                 
                 $ndocumentoMadre = new Zend_Form_Element_Text ('$ndocumentoMadre');
-		$ndocumentoMadre->setLabel('numero de documento:')
+		$ndocumentoMadre->setLabel('n° documento madre:')
 				 ->addValidator('StringLength', false, array(6, 25));
 		$ndocumentoMadre->addValidator('Digits', false, array('messages' => 'El campo telefono solo puede contener Numeros'));
                 $ndocumentoMadre->addDecorator('HtmlTag', array('tag'=>'div', 'closeOnly'=>true, 'placement'=>'append'));
@@ -198,7 +197,17 @@ $this->clearDecorators()
                                                         'Rugby'=>'Rugby',
                                                         'Boxeo'=>'Boxeo',
                                                         'ArtesMarciales'=>'ArtesMarciales',
-                                                        'Atletismo'=>'Atletismo'
+                                                        'Atletismo'=>'Atletismo',
+                                                        'ciclismo'=>'ciclismo', 
+                                                        'basquetHockey'=>'basquet Hockey', 
+                                                        'Natacion'=>'Natacion', 
+                                                        'Voley'=>'Voley', 
+                                                        'Handball'=>'Handball', 
+                                                        'Remo'=>'Remo', 
+                                                        'sky'=>'sky', 
+                                                        'snowboard'=>'snowboard', 
+                                                        'Skate'=>'Skate', 
+                                                        'longboard'=>'longboard'
                 ),1);
        		$multiselect4 = dameMultiselect('multiselect4'); 
 		$multiselect4 ->class="acrobatas";
@@ -220,8 +229,15 @@ $this->clearDecorators()
                                                         'Saxo'=>'Saxo',
                                                         'Trompeta'=>'Trompeta',
                                                         'Violin'=>'Violín',
+                                                        'Viola'=>'Viola',
                                                         'Contrabajo'=>'Contrabajo',
-                                                        'Violoncelo'=>'Violoncelo'
+                                                        'Violoncelo'=>'Violoncelo',
+                                                        'Flauta'=>'Flauta',
+                                                        'Oboe'=>'Oboe',
+                                                        'Clarinete'=>'Clarinete',
+                                                        'Trombón'=>'Trombón',
+                                                        'Tuba'=>'Tuba',
+                                                        'Armónica'=>'Armónica'
                 ),1);
        		$multiselect6 = dameMultiselect('multiselect6'); 
 		$multiselect6 ->class="acrobatas";
@@ -230,7 +246,16 @@ $this->clearDecorators()
                                                         'Odontólogo'=>'Odontólogo',
                                                         'Psicólogo'=>'Psicólogo',
                                                         'Arquitecto'=>'Arquitecto',
-                                                        'Ingeniero'=>'Ingeniero'
+                                                        'Ingeniero'=>'Ingeniero',
+                                                        'Abogado'=>'Abogado',
+                                                        'Arquitecto'=>'Arquitecto',
+                                                        'Biologo'=>'Biologo',
+                                                        'Enfermero'=>'Enfermero',
+                                                        'Dermatologo'=>'Dermatologo',
+                                                        'Farmaceutico'=>'Farmaceutico',
+                                                        'Docente'=>'Docente',
+                                                        'Veterinario'=>'Veterinario',
+                                                        'Chef'=>'Chef'
                 ),1);
                 /*
                  * Perfil
@@ -394,7 +419,19 @@ $this->clearDecorators()
                                                         'Aleman'=>'Alemán'
                 ),1);
 
-		/*
+
+                /*
+                 * 
+                 */
+                $cv = new Zend_Form_Element_File('cv');
+		$cv->setLabel('Cargue su CV')
+			  ->setDestination('../htdocs/upload')
+			 // ->setRequired(true)
+			  ->setDescription('Click Browse and choose an image');
+		$cv->addValidator('Count', false, 1);
+		$cv->addValidator('Size', false, 302400);
+		$cv->addValidator('Extension', false, 'doc','pfd');
+                /*
                  * Fotos!!
                  */
                 
@@ -442,7 +479,6 @@ $this->clearDecorators()
                     $email,
                     $Sexo,
                     $fechaNacimiento));
-
                 $this->addElements(array(
                     $namepadre,
                     $tipoPadre,
@@ -482,6 +518,7 @@ $this->clearDecorators()
                     $TalleCamisa,
                     $TalleCalzado,
                     $multiselect8,
+                    $cv,
                     $foto1,
                     $foto2,
                     $foto3,
