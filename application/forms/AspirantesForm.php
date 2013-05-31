@@ -61,8 +61,8 @@ class Application_Form_AspirantesForm extends Zend_Form
                 
 		$telefono = new Zend_Form_Element_Text ('telefono');
 		$telefono->setLabel('telefono:')
-				 ->addValidator('StringLength', false, array(8, 25))
-				 ->setRequired(true);
+				 ->addValidator('StringLength', false, array(8, 25));
+				// ->setRequired(true);
 		$telefono->addValidator('Digits', false, array('messages' => 'El campo telefono solo puede contener Numeros'));
 
 		$cel = new Zend_Form_Element_Text ('cel');
@@ -73,9 +73,9 @@ class Application_Form_AspirantesForm extends Zend_Form
 		
 		$PIN = new Zend_Form_Element_Text ('PIN');
 		$PIN->setLabel('PIN:')
-			->addValidator('StringLength', false, array(8, 25))
-			->setRequired(true);
-		$PIN->addValidator('Digits', false, array('messages' => 'El campo PIN solo puede contener Numeros'));
+			->addValidator('StringLength', false, array(8, 25));
+//			->setRequired(true);
+		//$PIN->addValidator('Digits', false, array('messages' => 'El campo PIN solo puede contener Numeros'));
 
 		
 		
@@ -411,12 +411,14 @@ class Application_Form_AspirantesForm extends Zend_Form
                              
 		$multiselect8 ->setLabel('Idioma')
                               -> setMultiOptions(array(
-                                                        'Ingles'=>'Ingles',
-                                                        'Frances'=>'Francés',
-                                                        'Aleman'=>'Alemán',
-                                                        'Portugues'=>'Portugués',
-                                                        'Italiano'=>'Italiano',
-                                                        'Aleman'=>'Alemán'
+								'Ninguno'=>'Ninguno',
+								'espNeu'=>'Español neutro',
+								'Ingles'=>'Ingles',
+								'Frances'=>'Francés',
+								'Aleman'=>'Alemán',
+								'Portugues'=>'Portugués',
+								'Italiano'=>'Italiano',
+								'Aleman'=>'Alemán'
                 ),1);
 
 
@@ -429,8 +431,11 @@ class Application_Form_AspirantesForm extends Zend_Form
 			 // ->setRequired(true)
 			  ->setDescription('Click Browse and choose an image');
 		$cv->addValidator('Count', false, 1);
-		$cv->addValidator('Size', false, 302400);
-		$cv->addValidator('Extension', false, 'doc','pfd');
+		//$cv->addValidator('Size', false, 302400);
+		$cv->addValidator('FilesSize',
+                      false,
+                      array('min' => '1kB', 'max' => '4MB'));
+		$cv->addValidator('Extension', false, array('doc', 'pdf'));
                 /*
                  * Fotos!!
                  */
@@ -441,24 +446,33 @@ class Application_Form_AspirantesForm extends Zend_Form
 			 // ->setRequired(true)
 			  ->setDescription('Click Browse and choose an image');
 		$foto1->addValidator('Count', false, 1);
-		$foto1->addValidator('Size', false, 202400);
-		$foto1->addValidator('Extension', false, 'jpg');
+		//$foto1->addValidator('Size', false, 202400);
+		$foto1->addValidator('FilesSize',
+                      false,
+                      array('min' => '1kB', 'max' => '4MB'));
+		
+		$foto1->addValidator('Extension', false, array('jpg', 'png'));
 
 		$foto2 = new Zend_Form_Element_File('foto2');
 		$foto2->setLabel('Imagen 2 // Recorda que no puede pesar mas de 3mb:')
 			  ->setDestination('../htdocs/upload');
   			 // ->setRequired(true);
 		$foto2->addValidator('Count', false, 1);
-		$foto2->addValidator('Size', false, 202400);
-		$foto2->addValidator('Extension', false, 'jpg');
+		$foto2->addValidator('FilesSize',
+                      false,
+                      array('min' => '1kB', 'max' => '4MB'));
+		
+		$foto2->addValidator('Extension', false, array('jpg', 'png'));
 
 		$foto3 = new Zend_Form_Element_File('foto3');
 		$foto3->setLabel('Imagen 3 // Recorda que no puede pesar mas de 3mb:')
 			  ->setDestination('../htdocs/upload');
 			  //->setRequired(true);
 		$foto3->addValidator('Count', false, 1);
-		$foto3->addValidator('Size', false, 202400);
-		$foto3->addValidator('Extension', false, 'jpg');
+				$foto3->addValidator('FilesSize',
+                      false,
+                      array('min' => '1kB', 'max' => '4MB'));
+		$foto1->addValidator('Extension', false, array('jpg', 'png'));
                 /*
                  * Submit y addElements
                  */
@@ -478,17 +492,13 @@ class Application_Form_AspirantesForm extends Zend_Form
                     $PIN,
                     $email,
                     $Sexo,
-                    $fechaNacimiento));
-                $this->addElements(array(
+                    $fechaNacimiento,
                     $namepadre,
                     $tipoPadre,
                     $ndocumentoPadre,
                     $namemadre,
                     $tipoMadre,
-                    $ndocumentoMadre
-               ));
-
-                $this->addElements(array(
+                    $ndocumentoMadre,
                     $Categorias,
                     $multiselect1,
                     $multiselect2,

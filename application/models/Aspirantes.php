@@ -16,7 +16,7 @@ class Application_Model_Aspirantes
 
              return $this -> _dbTableAspirantes -> fetchAll($select);
         }
-	public function add($name,$surname,$nacionalidad,$telefono,$cel,$PIN,$email,$Sexo,$fechaNacimiento,$Categorias,$multiselect1,$multiselect2,$multiselect3,$multiselect4,$multiselect5,$multiselect6,$regC,$multiselect7,$AceptaDesnudo,$AceptaRopaInterior,$Fuma,$Tatuajes,$Piercings,$Altura,$Peso,$Busto,$Cintura,$Cadera, $ColorDeOjos, $ColorDeCabello,$TipoDeCabello,$LargoDelCabello, $Etnia ,$Tez ,$TallePantalon,$TalleCamisa,$TalleCalzado,$multiselect8,$foto1,$foto2,$foto3)
+	public function add($name,$surname,$nacionalidad,$telefono,$cel,$PIN,$tipoD,$ndocumento,$namepadre,$tipoPadre,$ndocumentoPadre,$namemadre,$tipoMadre,$ndocumentoMadre,$cv,$email,$Sexo,$fechaNacimiento,$Categorias,$multiselect1,$multiselect2,$multiselect3,$multiselect4,$multiselect5,$multiselect6,$regC,$multiselect7,$AceptaDesnudo,$AceptaRopaInterior,$Fuma,$Tatuajes,$Piercings,$Altura,$Peso,$Busto,$Cintura,$Cadera, $ColorDeOjos, $ColorDeCabello,$TipoDeCabello,$LargoDelCabello, $Etnia ,$Tez ,$TallePantalon,$TalleCamisa,$TalleCalzado,$multiselect8,$foto1,$foto2,$foto3)
 	{
 		$data = array (
                     'pendiente' => 'false',
@@ -24,7 +24,17 @@ class Application_Model_Aspirantes
                     'apellido' => $surname,
                     'Nacionalidad' => $nacionalidad,
                     'telefono' => $telefono,
-                    'cel' => $cel,'PIN' => $PIN,
+                    'cel' => $cel,
+					'PIN' => $PIN,
+					'tipoD' =>$tipoD,
+					'ndocumento' =>$ndocumento,
+					'namepadre' =>$namepadre,
+					'tipoPadre' =>$tipoPadre,
+					'ndocumentoPadre' =>$ndocumentoPadre,
+					'namemadre' =>$namemadre,
+					'tipoMadre' =>$tipoMadre,
+					'ndocumentoMadre' =>$ndocumentoMadre,
+					'cv' =>$cv,
                     'email' => $email,
                     'Categorias' => $Categorias,
                     'multiselect1' => $multiselect1,
