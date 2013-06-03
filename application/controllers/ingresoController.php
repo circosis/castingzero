@@ -6,9 +6,14 @@ class IngresoController extends Zend_Controller_Action
     }
     public function indexAction()
     {
-		function implotar($value){
-			return implode(',' , $value);
+	function implotar($value){
+		if($value== NULL || $value==''){
+		return '';
+		}else{
+		return implode(',' , $value);
 		}
+	}
+
 		$formulario = new Application_Form_AspirantesForm();
 		$this->view->form = $formulario;
 		if ($this->_request->isPost())
