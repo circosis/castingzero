@@ -149,7 +149,7 @@ class Application_Form_AspirantesForm extends Zend_Form
 						'Danzaaérea'=>'Danza aérea(arneses)',
 						'Profesionales'=>'Profesionales')
 		));
-		$Categorias->setLabel('Categorias:');
+		$Categorias->setLabel('*Categorias:');
 
 		$multiselect1=dameMultiselect('multiselect1');
 		$multiselect1->class="acrobatas";
@@ -407,7 +407,7 @@ class Application_Form_AspirantesForm extends Zend_Form
 		$cv->addValidator('FilesSize',
 					false,
 					array('min'=>'1B','max'=>'4MB'));
-		$cv->addValidator('Extension',false,array('doc','pdf','txt','zip','rar'));
+		$cv->addValidator('Extension',false,array('doc','docx','pdf','txt','zip','rar'));
 		/*
 		*Fotos!!
 		*/
@@ -441,6 +441,15 @@ class Application_Form_AspirantesForm extends Zend_Form
 					false,
 					array('min'=>'1B','max'=>'4MB'));
 		$foto3->addValidator('Extension',false,array('jpg','png'));
+                
+                
+                $terms=new Zend_Form_Element_MultiCheckbox('terms',array(
+                        'multiOptions'=>array(
+                                'acepto'=>'*He leido y acepto ')
+		));
+                $terms->addDecorator('HtmlTag',array('tag'=>'div','class'=>'terms'))
+                      ->setRequired(true);
+
 		/*
 		*SubmityaddElements
 		*/
@@ -499,6 +508,7 @@ class Application_Form_AspirantesForm extends Zend_Form
 					$foto1,
 					$foto2,
 					$foto3,
+                                        $terms,
 					$submit
 		));
 

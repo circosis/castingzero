@@ -71,9 +71,9 @@ class IngresoController extends Zend_Controller_Action
 			$TalleCamisa = $formulario->getValue('TalleCamisa');
 			$TalleCalzado = $formulario->getValue('TalleCalzado');
 			$multiselect8 = implotar($formulario->getValue('multiselect8'));
-
+                        $terms = implotar($formulario->getValue('terms'));
 			$register = new Application_Model_Aspirantes();
-			$register -> add($name,$surname,$nacionalidad,$telefono,$cel,$PIN,$tipoD,$ndocumento,$namepadre,$tipoPadre,$ndocumentoPadre,$namemadre,$tipoMadre,$ndocumentoMadre,$cv,$email,$Sexo,$fechaNacimiento,$Categorias,$multiselect1,$multiselect2,$multiselect3,$multiselect4,$multiselect5,$multiselect6,$regC,$multiselect7,$AceptaDesnudo,$AceptaRopaInterior,$Fuma,$Tatuajes,$Piercings,$Altura,$Peso,$Busto,$Cintura,$Cadera, $ColorDeOjos, $ColorDeCabello,$TipoDeCabello,$LargoDelCabello, $Etnia ,$Tez ,$TallePantalon,$TalleCamisa,$TalleCalzado,$multiselect8,$foto1,$foto2,$foto3);
+			$register -> add($name,$surname,$nacionalidad,$telefono,$cel,$PIN,$tipoD,$ndocumento,$namepadre,$tipoPadre,$ndocumentoPadre,$namemadre,$tipoMadre,$ndocumentoMadre,$cv,$email,$Sexo,$fechaNacimiento,$Categorias,$multiselect1,$multiselect2,$multiselect3,$multiselect4,$multiselect5,$multiselect6,$regC,$multiselect7,$AceptaDesnudo,$AceptaRopaInterior,$Fuma,$Tatuajes,$Piercings,$Altura,$Peso,$Busto,$Cintura,$Cadera, $ColorDeOjos, $ColorDeCabello,$TipoDeCabello,$LargoDelCabello, $Etnia ,$Tez ,$TallePantalon,$TalleCamisa,$TalleCalzado,$multiselect8,$foto1,$foto2,$foto3,$terms);
 			$this->view->form = 'Tus datos fueron enviados correctamente. Casting Zero los avaluará.'; 
 			}
 		}

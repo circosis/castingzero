@@ -203,3 +203,4 @@ function resetSelect(s) {
 	s.options[i].selected = false;
   }
 }
+$('.terms').append('<a href="http://www.castingzero.com/terms">términos y condiciones</a>');

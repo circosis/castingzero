@@ -110,18 +110,29 @@ a:hover {
   /* IE6-8 */
 }
 
-/* line 90, ../sass/style.scss */
+/* line 91, ../sass/style.scss */
+.terms a {
+  background: none;
+  color: grey;
+  padding: 0;
+}
+/* line 95, ../sass/style.scss */
+.terms a:hover {
+  text-decoration: underline;
+}
+
+/* line 100, ../sass/style.scss */
 section {
   margin: 10px;
   padding: 10px;
   font-size: 13px;
 }
-/* line 94, ../sass/style.scss */
+/* line 104, ../sass/style.scss */
 section label {
   padding: 0px;
 }
 
-/* line 98, ../sass/style.scss */
+/* line 108, ../sass/style.scss */
 .footer {
   background: black;
   margin: 10px 0px;
@@ -130,35 +141,35 @@ section label {
   line-height: 36px;
   color: white;
 }
-/* line 105, ../sass/style.scss */
+/* line 115, ../sass/style.scss */
 .footer p {
   float: left;
   margin: 0px;
   padding: 0px;
 }
-/* line 110, ../sass/style.scss */
+/* line 120, ../sass/style.scss */
 .footer .visitSite {
   float: right;
 }
 
 /*estilos*/
-/* line 116, ../sass/style.scss */
+/* line 126, ../sass/style.scss */
 .zend_form dd {
   margin: 0;
 }
-/* line 118, ../sass/style.scss */
+/* line 128, ../sass/style.scss */
 .zend_form dd select {
   width: 250px;
 }
-/* line 121, ../sass/style.scss */
+/* line 131, ../sass/style.scss */
 .zend_form dd .botonEnviar {
   padding: 10px 0;
 }
-/* line 125, ../sass/style.scss */
+/* line 135, ../sass/style.scss */
 .zend_form dt {
   font-weight: bold;
 }
-/* line 129, ../sass/style.scss */
+/* line 139, ../sass/style.scss */
 .zend_form .errors li {
   background: red;
   color: white;
@@ -166,7 +177,7 @@ section label {
   padding: 0px;
 }
 
-/* line 137, ../sass/style.scss */
+/* line 147, ../sass/style.scss */
 input[type="text"] {
   width: 250px;
   padding: 0px;
@@ -176,17 +187,17 @@ input[type="text"] {
   @blueprint-form-borders;
 }
 
-/* line 143, ../sass/style.scss */
+/* line 153, ../sass/style.scss */
 #foto1, #foto2, #foto3, #cv {
   width: 130px;
 }
 
-/* line 146, ../sass/style.scss */
+/* line 156, ../sass/style.scss */
 #multiselect1-label, #multiselect2-label, #multiselect3-label, #multiselect4-label, #multiselect5-label, #multiselect6-label {
   display: none;
 }
 
-/* line 149, ../sass/style.scss */
+/* line 159, ../sass/style.scss */
 #multiselect1-element {
   width: 230px;
   overflow: hidden;
@@ -194,7 +205,7 @@ input[type="text"] {
   top: 580px;
   margin-left: 150px;
 }
-/* line 155, ../sass/style.scss */
+/* line 165, ../sass/style.scss */
 #multiselect1-element #multiselect1 {
   display: none;
   width: 250px;
@@ -202,7 +213,7 @@ input[type="text"] {
   padding: 5px 8px 5px 5px;
 }
 
-/* line 164, ../sass/style.scss */
+/* line 174, ../sass/style.scss */
 #multiselect2-element {
   width: 230px;
   overflow: hidden;
@@ -210,7 +221,7 @@ input[type="text"] {
   top: 580px;
   margin-left: 150px;
 }
-/* line 170, ../sass/style.scss */
+/* line 180, ../sass/style.scss */
 #multiselect2-element #multiselect2 {
   display: none;
   width: 230px;
@@ -219,7 +230,7 @@ input[type="text"] {
   padding: 5px 8px 5px 5px;
 }
 
-/* line 179, ../sass/style.scss */
+/* line 189, ../sass/style.scss */
 #multiselect3-element {
   width: 230px;
   overflow: hidden;
@@ -227,7 +238,7 @@ input[type="text"] {
   top: 580px;
   margin-left: 150px;
 }
-/* line 185, ../sass/style.scss */
+/* line 195, ../sass/style.scss */
 #multiselect3-element #multiselect3 {
   display: none;
   width: 230px;
@@ -236,7 +247,7 @@ input[type="text"] {
   padding: 5px 8px 5px 5px;
 }
 
-/* line 194, ../sass/style.scss */
+/* line 204, ../sass/style.scss */
 #multiselect4-element {
   width: 230px;
   overflow: hidden;
@@ -244,7 +255,7 @@ input[type="text"] {
   top: 580px;
   margin-left: 150px;
 }
-/* line 200, ../sass/style.scss */
+/* line 210, ../sass/style.scss */
 #multiselect4-element #multiselect4 {
   display: none;
   width: 230px;
@@ -253,7 +264,7 @@ input[type="text"] {
   padding: 5px 8px 5px 5px;
 }
 
-/* line 209, ../sass/style.scss */
+/* line 219, ../sass/style.scss */
 #multiselect5-element {
   width: 230px;
   overflow: hidden;
@@ -261,7 +272,7 @@ input[type="text"] {
   top: 580px;
   margin-left: 150px;
 }
-/* line 215, ../sass/style.scss */
+/* line 225, ../sass/style.scss */
 #multiselect5-element #multiselect5 {
   display: none;
   width: 230px;
@@ -270,7 +281,7 @@ input[type="text"] {
   padding: 5px 8px 5px 5px;
 }
 
-/* line 224, ../sass/style.scss */
+/* line 234, ../sass/style.scss */
 #multiselect6-element {
   width: 230px;
   overflow: hidden;
@@ -278,7 +289,7 @@ input[type="text"] {
   top: 580px;
   margin-left: 150px;
 }
-/* line 230, ../sass/style.scss */
+/* line 240, ../sass/style.scss */
 #multiselect6-element #multiselect6 {
   display: none;
   width: 230px;
@@ -287,7 +298,7 @@ input[type="text"] {
   padding: 5px 8px 5px 5px;
 }
 
-/* line 239, ../sass/style.scss */
+/* line 249, ../sass/style.scss */
 .padres {
   background: #333;
   color: white;
@@ -302,12 +313,12 @@ input[type="text"] {
   text-shadow: 2px 2px black;
 }
 
-/* line 248, ../sass/style.scss */
+/* line 258, ../sass/style.scss */
 #tipoMadre, #tipoPadre, #tipoD {
   width: 50px;
 }
 
-/* line 251, ../sass/style.scss */
+/* line 261, ../sass/style.scss */
 .botonCerrarFormu {
   background-color: #46827d;
   *zoom: 1;
@@ -322,16 +333,16 @@ input[type="text"] {
   color: white;
   line-height: 38px;
 }
-/* line 255, ../sass/style.scss */
+/* line 265, ../sass/style.scss */
 .botonCerrarFormu .boton-aceptar {
   padding: 11px 15%;
   cursor: pointer;
 }
-/* line 258, ../sass/style.scss */
+/* line 268, ../sass/style.scss */
 .botonCerrarFormu .boton-aceptar:hover {
   background: #333;
 }
-/* line 262, ../sass/style.scss */
+/* line 272, ../sass/style.scss */
 .botonCerrarFormu .boton-cancelar {
   padding: 11px 15%;
   cursor: pointer;
@@ -354,12 +365,12 @@ input[type="text"] {
   filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#023e56', endColorstr='#012833',GradientType=0 );
   /* IE6-8 */
 }
-/* line 266, ../sass/style.scss */
+/* line 276, ../sass/style.scss */
 .botonCerrarFormu .boton-cancelar:hover {
   background: #333;
 }
 
-/* line 272, ../sass/style.scss */
+/* line 282, ../sass/style.scss */
 .leyedapop {
   background: gray;
   color: black;
@@ -367,13 +378,13 @@ input[type="text"] {
   font-size: 11px;
 }
 
-/* line 278, ../sass/style.scss */
+/* line 288, ../sass/style.scss */
 .IndexText {
   display: block;
   min-height: 300px;
   float: left;
 }
-/* line 282, ../sass/style.scss */
+/* line 292, ../sass/style.scss */
 .IndexText h1 {
   text-align: left;
   font-size: 30px;
@@ -382,7 +393,7 @@ input[type="text"] {
   font-weight: 400;
   letter-spacing: -2px;
 }
-/* line 290, ../sass/style.scss */
+/* line 300, ../sass/style.scss */
 .IndexText p {
   font-size: 15px;
   text-align: start;
@@ -394,12 +405,12 @@ input[type="text"] {
   display: block;
   margin: 24px 0;
 }
-/* line 301, ../sass/style.scss */
+/* line 311, ../sass/style.scss */
 .IndexText a {
   clear: both;
 }
 
-/* line 305, ../sass/style.scss */
+/* line 315, ../sass/style.scss */
 #submit {
   text-decoration: none;
   color: white;
@@ -423,7 +434,7 @@ input[type="text"] {
   font-style: italic;
   border: none;
 }
-/* line 315, ../sass/style.scss */
+/* line 325, ../sass/style.scss */
 #submit:hover {
   background: #023e56;
   /* Old browsers */
