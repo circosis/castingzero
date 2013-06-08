@@ -1,20 +1,28 @@
 <div id="datos">
     DATOS EXTRAIDOS DE LA BASE DE DATOS:
     <br><br>
-    <?php foreach ($this->dates_form as $date_form) : ?>
-		    <?php if($this->escape($date_form->foto1)){
-    		echo '<img src="upload/'. $this->escape($date_form->foto1).'" width="200"/>';
-			}
-			?>
-		    <?php if($this->escape($date_form->foto2)){
-    		echo '<img src="upload/'. $this->escape($date_form->foto2).'" width="200"/>';
-			}
-			?>
-		    <?php if($this->escape($date_form->foto3)){
-    		echo '<img src="upload/'. $this->escape($date_form->foto3).'" width="200"/>';
-			}
-			?>
+    <div class="conteAgencias">
+    <?php
+    $max = sizeof($this->dates_form);
 
+    foreach ($this->dates_form as  $date_form) : 
+
+              echo'<div class="persona">';
+            if($this->escape($date_form->foto1)){
+            echo '<img src="upload/'. $this->escape($date_form->foto1).'" width="200"/>';
+            }
+            if($this->escape($date_form->foto2)){
+            echo '<img src="upload/'. $this->escape($date_form->foto2).'" width="200"/>';
+            }
+            if($this->escape($date_form->foto3)){
+            echo '<img src="upload/'. $this->escape($date_form->foto3).'" width="200"/>';
+            }
+    ?>
+
+            <br>
+            <strong>Nombre: </strong><?php echo $this->escape($date_form->nombre); ?>
+            <br>
+            <strong>Apellido: </strong><?php echo $this->escape($date_form->apellido); ?>
             <br>
             <strong>telefono: </strong><?php echo $this->escape($date_form->telefono); ?>
             <br>
@@ -41,7 +49,10 @@
             <br>
               <strong>id:</strong> <?php echo $this->escape($date_form->id); ?>
             <br>
-            
-    <?php endforeach ?>
- 
+             <?php echo'</div>';?>
+    <?php 
+        
+    endforeach;
+    ?>
+    </div>
 </div>

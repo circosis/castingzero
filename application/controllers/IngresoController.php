@@ -6,6 +6,7 @@ class IngresoController extends Zend_Controller_Action
     }
     public function indexAction()
     {
+        
 	function implotar($value){
 		if($value== NULL || $value==''){
 		return '';
@@ -36,7 +37,6 @@ class IngresoController extends Zend_Controller_Action
 			$namemadre= $formulario->getValue('namemadre');
 			$tipoMadre= $formulario->getValue('tipoMadre');
 			$ndocumentoMadre= $formulario->getValue('ndocumentoMadre');
-			$cv= $formulario->getValue('cv');
 			$Categorias = implotar($formulario->getValue('Categorias'));
 			$multiselect1 = implotar($formulario->getValue('multiselect1'));
 			$multiselect2 = implotar($formulario->getValue('multiselect2'));
@@ -46,7 +46,12 @@ class IngresoController extends Zend_Controller_Action
 			$multiselect6 = implotar($formulario->getValue('multiselect6'));
 			$Sexo = $formulario->getValue('Sexo');
 			$fechaNacimiento = $formulario->getValue('fechaNac');
-			$foto1 = $formulario->getValue('foto1');
+                        if($formulario->getValue('cv')== NULL || $formulario->getValue('cv')==''){
+                            $cv='';
+                        }else{    
+                            $cv= $formulario->getValue('cv');
+                        }
+                        $foto1 = $formulario->getValue('foto1');
 			$foto2 = $formulario->getValue('foto2');
 			$foto3 = $formulario->getValue('foto3');
 			$regC = $formulario->getValue('regC');

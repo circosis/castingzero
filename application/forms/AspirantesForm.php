@@ -408,6 +408,7 @@ class Application_Form_AspirantesForm extends Zend_Form
 					false,
 					array('min'=>'1B','max'=>'4MB'));
 		$cv->addValidator('Extension',false,array('doc','docx','pdf','txt','zip','rar'));
+                
 		/*
 		*Fotos!!
 		*/

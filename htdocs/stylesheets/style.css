@@ -455,3 +455,10 @@ input[type="text"] {
   filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#023e56', endColorstr='#012833',GradientType=0 );
   /* IE6-8 */
 }
+
+/* line 329, ../sass/style.scss */
+.persona {
+  border: 1px solid black;
+  margin: 8px;
+  padding: 8px;
+}
